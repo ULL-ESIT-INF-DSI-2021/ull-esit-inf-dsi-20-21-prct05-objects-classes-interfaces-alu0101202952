@@ -1,3 +1,4 @@
+"use strict";
 /*export class pokedex{
   private name: String;
   private weight: number;
@@ -31,4 +32,4 @@
 } //class pokedex ends
 
 
-let pokemon = new pokedex("serperior", 63.0, 3.3, "grass",(attack, defense, speed, hp) => [75, 95, 113, 75]);*/
+let pokemon = new pokedex("serperior", 63.0, 3.3, "grass",(attack, defense, speed, hp) => [75, 95, 113, 75]);*/ 

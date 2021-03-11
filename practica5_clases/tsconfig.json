@@ -5,10 +5,12 @@
     "./dist"
   ],
   "compilerOptions": {
-
     "declaration": true,
     "outDir": "./dist",
     "rootDir": "./src",
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
 
     /* Basic Options */
