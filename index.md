@@ -52,7 +52,7 @@
 ## OBJETIVOS
 
 
-Los objetivos en esta práctica tendremos que resolver una serie de ejercicios de programación que nos permitirán conocer más en profundidad, tanto los tipos de datos estáticos en TypeScript, como las funciones, empleando también expresiones regulares. Además de configurar la documentación en typedoc.
+Los objetivos en esta práctica será que resolver una serie de ejercicios de programación que nos permitirán conocer más en profundidad los objetos, clases e interfaces del lenguaje TypeScript. Para ello empleando los conocimientos además, que ya tenemos, en typedoc, y la realización de las pruebas unitarias siguiendo los pasos de TDD, es decir, realizar pruebas y expectativas, ver su fallo y corregir el código y volver con la prueba y sus expectativas para que den acierto. Para ello tendremos que usar Mocha y Chai.
 
 - **ENLACE A LA DOCUMENTACIÓN EN TYPEDOC**
 > - [Informe documentación con Typedoc](http://127.0.0.1:5500/p3_Ejercicios_datos_funciones/docs/index.html)
@@ -105,6 +105,21 @@ También necesitaremos una compilación con control automático de cambios que i
 
 ![Compilacion control de cambios automáticos](https://i.imgur.com/TfNDhqN.jpg)
 
+Por último en la organización de la estructura básica será la instalación del paquete **EsLint**, esto por si quisiéramos comprobar la sintaxis de nuestro código, encontrar y solucionar problemas en el mismo. Primero lo instalamos con el comando:
+
+> `npm install -g eslint` 
+
+Y lo inicializamos con `eslint --init` añadiéndole esto valores:
+
+![Configuración Eslint](https://i.imgur.com/roVpYH9.jpg)
+
+Luego modificar el fichero .eslint que se crea con las reglas correspondientes, quedando:
+
+![Esdlint configuracion fichero](https://i.imgur.com/pvViLkf.jpg)
+
+Quedando la primera estructura básica de esta práctica del modo: 
+
+![Estructura básica](https://i.imgur.com/tJ7j521.jpg)
 
 Tras la estructura básica nos dedicaremos a trabajar en el directorio `./src` donde alojaremos los ficheros correspondientes a los ejercicios que se nos plantea en esta práctica, además de preparar la documentación con typedoc y las pruebas unitarias (TDD) con Mocha y Chai.
 
@@ -113,29 +128,24 @@ Tras la estructura básica nos dedicaremos a trabajar en el directorio `./src` d
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
 
 
-## PRIMEROS PASOS DE CONFIGURACIÓN CON TYPEDOC Y DESARROLLO DE DOCUMENTACIÓN CON TYPEDOC
+## INSTALACIÓN. CONFIGURACIÓN TYPEDOC
 
-Como en esta práctica era opcional realizar la documentación con **Typedoc**, pero en otras prácticas posteriores si se me iban a pedir, decidí iniciarme en esta práctica en el manejo de la documentación mediante Typedoc. Para conocer más sobre esta herramienta consultar [Typedoc](https://typedoc.org/), gracias a la información de dicha página web,  la explicación en clase y el video de instalación y configuración de este he conseguido tener la documentación de mi práctica, la cual enseñaré más adelante, se localiza en el directori o `./doc` y cuya documentación presento tanto en el apartado **OBJETIVOS** de este informe y a continuación:
+Para conocer más sobre esta herramienta consultar [Typedoc](https://typedoc.org/). Como ya desde la práctica 3 nos habíamos introducido a la herramienta **Typedoc**, solo queda seguir los mismos pasos mecánicos para esta práctica. Dicho informe creado en Typedoc hecho con los comentarios de los ejercicios de esta práctica se aloja en:
 
-> - [Informe documentación en Typedoc](http://127.0.0.1:5500/p3_Ejercicios_datos_funciones/docs/index.html)
+[Informe Typedoc Práctica 5]() 
 
+O también mirando en los apartados **Objetivos** y **Bibliografía/ webgrafía** de este informe.
 
-Primero para ello necesitaremos instalar Typedoc así como sus dependencias para ello la opción `--save-dev`, quedando:
+Comenzamos con la instalación de typedoc:
 
-![Instalación de Typedoc](https://i.imgur.com/q8cER6s.jpg)
-
-Con ello podemos ver que se ha creado un directorio, que es como organizará typedoc la documentación que es por módulos, creando así `./node_modules`:
-
-![./node_modules](https://i.imgur.com/QzCbxpd.jpg)
+![Instalación typedoc](https://i.imgur.com/MgB701j.jpg)
 
 
-Continuaremos con la configuración para poder usar Typedoc, primero si no se ha creado por defecto crear el **typedoc.json**, al cual le añadimos: 
+Con ello podemos ver que se ha creado un directorio, que es como organizará typedoc la documentación que es por módulos, creando así `./node_modules`. Continuaremos con la configuración para poder usar Typedoc, primero si no se ha creado por defecto crear el **typedoc.json**, lo creamos y le añadimos la ruta de los ficheros a los que haremos el seguimiento de documentación. Y en el apartado `"out: "` pondremos el directorio donde se alojará toda esa documentación. Tras guardar dicha configuración se genereará automáticamente el directorio `./doc`.
 
-![typedoc.json](https://i.imgur.com/oiYEcex.jpg)
+![typedoc.json](https://i.imgur.com/K7eViEk.jpg)
 
-Como observamos en `"entryPoints" :[]` pondremos la ruta de los ficheros sobre los cuales haremos su documentación. Y en el apartado `"out: "` pondremos el directorio donde se alojará toda esa documentación. Tras guardar dicha configuración se genereará automáticamente el directorio `./doc`.
-
-Pero para poder usar la herramienta necesitamos invocarla con un comando, dicho comando será: `npm run [nombre_invocación]`, el nombre de invocación es lo siguiente que configuraremos en el **package.json**, para ello pondremos en la parte de scripts del fichero:
+Para poder usar la herramienta necesitamos invocarla con un comando, dicho comando será: `npm run [nombre_invocación]`, el nombre de invocación es lo siguiente que configuraremos en el **package.json**, para ello pondremos en la parte de scripts del fichero:
 
 > `"doc": "typedoc"`
 
@@ -144,20 +154,16 @@ Pero para poder usar la herramienta necesitamos invocarla con un comando, dicho 
 
 Esto quedaría tal que:
 
-![Typedoc configuracion package.json](https://i.imgur.com/pgYBgQ5.jpg)
+![Typedoc configuracion package.json](https://i.imgur.com/bbibywr.jpg)
 
 
-Ya tendríamos la documentación en el directorio `./doc` para ejecutarla serviría con el comando ´npm run doc´ como antes especificamos:
+Ya tendríamos la documentación en el directorio `./doc` para ejecutarla serviría con el comando ´npm run doc´ como antes especificamos. Quedando una estructura como:
 
-![npm run doc](https://i.imgur.com/VDJ6hiu.jpg)
+![Estructura con typedoc](https://i.imgur.com/6rK5szx.jpg)
 
-Esto genera documentación pero a partir de comentarios de TypeScript del estilo `/** */` con esta forma especificando la función, los parámetros, lo que devuelve, los snippet quedaría tal que:
+Esto genera documentación pero a partir de comentarios de TypeScript del estilo `/** */` con esta forma especificando la función, los parámetros, lo que devuelve, los snippet...
 
-![Tipo de comentarios](https://i.imgur.com/HnRBdK0.jpg)
-
-Esto guardaría esos comentarios en forma de página HTML para la documentación, tendríamos que ir al fichero `index.html` en el directorio de `./modules`, y con el click derecho pinchar sobre la opción de: __Open with Live Server__ y así generaría una página HTML con los comentarios en forma de documentación, como:
-
-![TypeDoc final HTML](https://i.imgur.com/dCZG30B.jpg)
+Esto guardaría esos comentarios en forma de página HTML para la documentación, tendríamos que ir al fichero `index.html` en el directorio de `./modules`, y con el click derecho pinchar sobre la opción de: __Open with Live Server__ y así generaría una página HTML con los comentarios en forma de documentación.
 
 Finalizando así la documentación con Typedoc.
 
@@ -174,13 +180,8 @@ Finalizando así la documentación con Typedoc.
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
 
 
-## EJERCICIOS EN TYPESCRIPT CON TYPEDOC
+## INSTALACIÓN. CONFIGURACIÓN MOCHA Y CAHI
 
-En este apartado nombraremos en qué consisten los ejercicios pues los encontramos alojados en el repositorio en:
-
-- [Ejercicios Práctica 3](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101202952/tree/desarrollo/p3_Ejercicios_datos_funciones)
-
-A continuación explicaré en qué consiste cada uno de los ejercicios con mi documentación de Typedoc
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━✧❂✧━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
