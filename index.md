@@ -67,7 +67,7 @@ Los objetivos en esta práctica tendremos que resolver una serie de ejercicios d
 
 Antes de comenzar se nos requiere que aceptemos la tarea asignada en el GitHub Classroom:
 
-![Asignación GitHub Classroom](https://i.imgur.com/5TY1Rmu.jpg)
+![Asignación GitHub Classroom](https://i.imgur.com/7sAZe2x.jpg)
 
 Con ello ya podríamos trabajar en esta práctica.
 
@@ -79,23 +79,27 @@ Con ello ya podríamos trabajar en esta práctica.
 ## ESTRUCTURA BÁSICA DE PROYECTOS
 
 
-Lo primero sería estructurar el workspace de nuestra práctica siguiendo algunos pasos indicados en :
+Lo primero sería estructurar el workspace de nuestra práctica siguiendo algunos pasos indicados en:
 
 > - [Estrutura](https://ull-esit-inf-dsi-2021.github.io/typescript-theory/typescript-project-setup.html)
 
+Comenzamos creando la estructura básica, primero creando el directorio donde se alojará el repositorio clonado, tal que:
+
+![Clonar repositorio](https://i.imgur.com/wGvqmj6.jpg)
+
+Comenzamos modificando el **package.json** con el comando `npm init --yes` y creamos de forma automática el fichero de configuración **tsconfig.json** eso lo haremos con el comando `tsc --init` y se crearía el tsconfig.json por defecto, nosotros lo modificaremos algo más para poder trabajar correctamente, necesitaremos poner la opción **exclude []** dentro del tsconfig.json para indicarle al compilador los directorios que exluiría a la hora de compilar explícitamente quedando:
+
+![tsconfig.json](https://i.imgur.com/cMYGzU1.jpg)
+
+Esos 3 directorios los exluiríamos a la hora de hacer `npm start` y no fallar a la hora de compilar los tests o los node-modules.
 
 Para ello creo el directorio donde empezaremos a estructurar los directorios y ejercicios, además de configurar el **package.json**, quedando el package.json tal que:
 
 ![package.json](https://i.imgur.com/EVHNhZV.jpg)
 
-También necesitamos crear a partir de este el **tsconfig.json** con la ruta de localización de los ejercicios.ts, en el directorio `./src` y sus ejecutables .js en el directorio `./dist`, tal que:
+También necesitamos crear a partir de este el **tsconfig.json** con la ruta de localización de los ejercicios.ts, en el directorio `./src` y sus ejecutables .js en el directorio `./dist`, como hemos hecho en otras prácticas:
 
-![tsconfig.json](https://i.imgur.com/KuKqur7.jpg)
-
-
-Automáticamente, o manualmente, se crearía ambos directorios donde trabajaremos. Quedando la primera estructura básica de la forma:
-
-![Estructura básica](https://i.imgur.com/9u30DB6.jpg)
+Manualmente, se crearía ambos directorios donde trabajaremos. 
 
 También necesitaremos una compilación con control automático de cambios que instalaremos con el comando `npm install --save-dev tsc-watch`, tal que:
 
