@@ -95,7 +95,7 @@ Esos 3 directorios los exluiríamos a la hora de hacer `npm start` y no fallar a
 
 Para ello creo el directorio donde empezaremos a estructurar los directorios y ejercicios, además de configurar el **package.json**, quedando el package.json tal que:
 
-![package.json](https://i.imgur.com/EVHNhZV.jpg)
+![package.json](https://i.imgur.com/8E7sYOj.jpg)
 
 También necesitamos crear a partir de este el **tsconfig.json** con la ruta de localización de los ejercicios.ts, en el directorio `./src` y sus ejecutables .js en el directorio `./dist`, como hemos hecho en otras prácticas:
 
@@ -103,10 +103,10 @@ Manualmente, se crearía ambos directorios donde trabajaremos.
 
 También necesitaremos una compilación con control automático de cambios que instalaremos con el comando `npm install --save-dev tsc-watch`, tal que:
 
-![Compilacion control de cambios automáticos](https://i.imgur.com/7Ip0IWk.jpg)
+![Compilacion control de cambios automáticos](https://i.imgur.com/TfNDhqN.jpg)
 
 
-Tras la estructura básica nos dedicaremos a trabajar en el directorio `./src` donde alojaremos los ficheros correspondientes a los ejercicios que se nos plantea en esta práctica
+Tras la estructura básica nos dedicaremos a trabajar en el directorio `./src` donde alojaremos los ficheros correspondientes a los ejercicios que se nos plantea en esta práctica, además de preparar la documentación con typedoc y las pruebas unitarias (TDD) con Mocha y Chai.
 
 
 
