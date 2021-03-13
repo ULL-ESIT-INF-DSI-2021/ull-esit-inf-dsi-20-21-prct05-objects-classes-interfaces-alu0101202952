@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-export class pokedex{
-=======
+"use strict";
 /*export class Pokedex{
->>>>>>> desarrollo
   private name: String;
   private weight: number;
   private height: number;
@@ -36,9 +33,6 @@ export class pokedex{
 } //class pokedex ends
 
 
-<<<<<<< HEAD
-let pokemon = new pokedex("serperior", 63.0, 3.3, "grass",(attack, defense, speed, hp) => [75, 95, 113, 75]);
-=======
 export class Combat{
   public namePokemon1: string;
   public namePokemon2: string;
@@ -70,7 +64,7 @@ export class Combat{
             break;
            case "eléctrico":
             efectividad1 = efectividad1*1;
-            efectividad2 = efectividad2*1; 
+            efectividad2 = efectividad2*1;
             break;
           default:
             efectividad1 = efectividad1*0.5;
@@ -88,7 +82,7 @@ export class Combat{
               break;
              case "eléctrico":
               efectividad1 = efectividad1*0.5;
-              efectividad2 = efectividad2*2; 
+              efectividad2 = efectividad2*2;
               break;
             default:
               efectividad1 = efectividad1*0.5;
@@ -106,7 +100,7 @@ export class Combat{
               break;
              case "eléctrico":
               efectividad1 = efectividad1*1;
-              efectividad2 = efectividad2*1; 
+              efectividad2 = efectividad2*1;
               break;
             default:
               efectividad1 = efectividad1*0.5;
@@ -124,7 +118,7 @@ export class Combat{
               break;
              case "hierba":
               efectividad1 = efectividad1*1;
-              efectividad2 = efectividad2*1; 
+              efectividad2 = efectividad2*1;
               break;
             default:
               efectividad1 = efectividad1*0.5;
@@ -141,9 +135,8 @@ export class Combat{
       dañoPoke2 = Math.round(dañoPoke2);
       console.log(`Daño que realiza el equipo rival: ${dañoPoke2}`);
       
-    }*//*
-  }
+    }*/ /*
+}
 }
 
-let pokemon = new Pokedex("serperior", 63.0, 3.3, "grass",(attack, defense, speed, hp) => [75, 95, 113, 75]);*/
->>>>>>> desarrollo
+let pokemon = new Pokedex("serperior", 63.0, 3.3, "grass",(attack, defense, speed, hp) => [75, 95, 113, 75]);*/ 
