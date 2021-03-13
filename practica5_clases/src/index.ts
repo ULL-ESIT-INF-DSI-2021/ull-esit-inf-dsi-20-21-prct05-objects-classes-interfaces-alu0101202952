@@ -13,11 +13,11 @@ export class Pokedex{
         this.type = type;
         this.stats = stats;
       }
-  
+  /*
       getName(){
         return this.name;
       }
-  
+  */
       getWeight(){
         return this.weight;
       }
