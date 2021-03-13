@@ -26,4 +26,11 @@ describe('pokedex', () => {
   it('pok2.getHeight() returns height', () => {
     return expect(pok2.getHeight()).to.be.equal(1.5);
   })
+
+  it('pok1.getType() returns type', () => {
+    return expect(pok1.getType()).to.be.equal("grass");
+  })
+  it('pok2.getType() returns type', () => {
+    return expect(pok2.getType()).to.be.equal("water");
+  })
 });
