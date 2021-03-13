@@ -48,23 +48,23 @@ export class Pokedex{
   export class Combat{
     public type1!: string;
     public type2!: string;
-    public dañoPoke1: number;
-    public dañoPoke2:number;
+    //public dañoPoke1: number;
+    //public dañoPoke2:number;
     //public opponents:(namePokemon1: string, namePokemon2:string) => any;
   
-    constructor(type1:string, type2:string, dañoPoke1: number, dañoPoke2: number) {
+    constructor(type1:string, type2:string, /*dañoPoke1: number, dañoPoke2: number*/) {
       this.type1 = type1;
       this.type2 = type2;
-      this.dañoPoke1 = dañoPoke1;
-      this.dañoPoke2 = dañoPoke2;
+      //this.dañoPoke1 = dañoPoke1;
+      //this.dañoPoke2 = dañoPoke2;
     }
-
+/*
     getDaño1(){
       return this.dañoPoke1;
     }
     getDaño2(){
       return this.dañoPoke2;
-    }
+    }*/
     
     public combat(type1: string, type2: string) {
       var type1 = pok1.getType();
@@ -161,15 +161,28 @@ export class Pokedex{
 
       console.log(`Daño que causa tu equipo Pokemon: ${dañoPoke1}`);
       console.log(`Daño que realiza el equipo rival: ${dañoPoke2}`);
+      //this.start(type1, type2, 75, 95, dañoPoke1, dañoPoke2);
+      
     }
 
-   
-    
-    public start(namePokemon1: string, namePokemon2: string, hp1: number, hp2: number, dañoPoke1:number, dañoPoke2:number) {
-      console.log(`START THE BATTLE!!!`)
-      do{
 
-      } while(dañoPoke1 >= hp1 || dañoPoke2 >= hp2)
+    public start(type1: string, type2: string, hp1: number, hp2: number/*, dañoPoke1:number, dañoPoke2:number*/) {
+      var i;
+      var j;
+      var result1;
+      var result2;
+      var dañoPoke1 = 79;
+      var dañoPoke2 = 29;
+      // Se realizarán ataques entre los contrincantes hasta que el daño sufrido por uno de ellos sea igual o superior a su HP.
+      if(dañoPoke1 >= hp1 || dañoPoke2 >= hp2){
+        for(i = hp1 ; i = 0; i--){
+          for(j = hp2; j =0; j--){
+            result1 = hp1 - dañoPoke2; //Escribe el valor de la vida de mi pokemon tras el daño recibido por parte del rival
+            result2 = hp2 - dañoPoke1; //Escribe el valor de la vida del rival tras recibir el daño que le hizo mi pokemon
+            console.log(result1);
+          }
+        }
+      }
     }
   }
   
@@ -191,10 +204,12 @@ export class Pokedex{
  console.log(`\t\t       FIGHT\n`);
  console.log(`└───────────────────── °∘❉∘° ─────────────────────┘\n`);
  
- let pokemon_ = new Combat(pok1.getType(), pok2.getType(), 75, 95); 
+ let pokemon_ = new Combat(pok1.getType(), pok2.getType()); 
  console.log(pokemon_.combat(pok1.getType(), pok2.getType()));
 
 
- let daño1 = pokemon_.getDaño1();
- let daño2 = pokemon_.getDaño2();
- console.log(pokemon_.start(pok1.getType(), pok2.getType(), 75, 95, daño1, daño2));
+ 
+ console.log(`\n********************************************************************`);
+ console.log(`\t\t      START THE BATTLE!!!`);
+ console.log(`********************************************************************\n`);
+ console.log(pokemon_.start(pok1.getType(), pok2.getType(), 75, 95));
