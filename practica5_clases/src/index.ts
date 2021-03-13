@@ -21,11 +21,11 @@ export class Pokedex{
       getWeight(){
         return this.weight;
       }
-  
+  /*
       getHeight(){
         return this.height;
       }
-  
+  */
       getType(){
         return this.type;
       }

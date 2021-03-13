@@ -19,4 +19,11 @@ describe('pokedex', () => {
   it('pok2.getWeight() returns weight', () => {
     return expect(pok2.getWeight()).to.be.equal(94.6);
   })
+
+  it('pok1.getHeight() returns height', () => {
+    return expect(pok1.getHeight()).to.be.equal(3.3);
+  })
+  it('pok2.getHeight() returns height', () => {
+    return expect(pok2.getHeight()).to.be.equal(1.5);
+  })
 });
