@@ -25,10 +25,10 @@ export class Pokedex{
       getHeight(){
         return this.height;
       }
-/*
+
       getType(){
         return this.type;
-      }*/
+      }
   } //class pokedex ends
   
   
