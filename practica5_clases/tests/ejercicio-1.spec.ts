@@ -13,4 +13,10 @@ describe('pokedex', () => {
     return expect(pok2.getName()).to.be.equal("samurott");
   })
 
+  it('pok1.getWeight() returns weight', () => {
+    return expect(pok1.getWeight()).to.be.equal(63.0);
+  })
+  it('pok2.getWeight() returns weight', () => {
+    return expect(pok2.getWeight()).to.be.equal(94.6);
+  })
 });

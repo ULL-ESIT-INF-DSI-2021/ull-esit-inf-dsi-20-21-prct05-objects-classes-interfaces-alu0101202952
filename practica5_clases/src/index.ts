@@ -17,11 +17,11 @@ export class Pokedex{
       getName(){
         return this.name;
       }
-  
+  /*
       getWeight(){
         return this.weight;
       }
-  
+  */
       getHeight(){
         return this.height;
       }
