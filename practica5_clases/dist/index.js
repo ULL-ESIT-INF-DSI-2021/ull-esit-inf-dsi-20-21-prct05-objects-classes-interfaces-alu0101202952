@@ -21,111 +21,133 @@ var Pokedex = /** @class */ (function () {
     Pokedex.prototype.getType = function () {
         return this.type;
     };
+    Pokedex.prototype.getStats = function () {
+        return this.stats;
+    };
+    Pokedex.prototype.getAttack = function () {
+        var attack;
+        for (var i = 0; i < this.stats.length; i++) {
+            attack = this.stats([0], [1], [2], [3]);
+        }
+        return attack;
+    };
     return Pokedex;
 }()); //class pokedex ends
 exports.Pokedex = Pokedex;
 var Combat = /** @class */ (function () {
     //public opponents:(namePokemon1: string, namePokemon2:string) => any;
-    function Combat(namePokemon1, namePokemon2) {
-        this.namePokemon1 = namePokemon1;
-        this.namePokemon2 = namePokemon2;
+    function Combat(type1, type2, dañoPoke1, dañoPoke2) {
+        this.type1 = type1;
+        this.type2 = type2;
+        this.dañoPoke1 = dañoPoke1;
+        this.dañoPoke2 = dañoPoke2;
     }
-    Combat.prototype.combat = function (namePokemon1, namePokemon2) {
-        namePokemon1 = pok1.getName();
-        namePokemon2 = pok2.getName();
+    Combat.prototype.getDaño1 = function () {
+        return this.dañoPoke1;
+    };
+    Combat.prototype.getDaño2 = function () {
+        return this.dañoPoke2;
+    };
+    Combat.prototype.combat = function (type1, type2) {
         var type1 = pok1.getType();
         var type2 = pok2.getType();
-        //var type1 = prompt("Introduzca el tipo de tu pokemon:", "");
-        //var type2 = prompt("Introduce el tipo del pokemon rival:", "");
-        //var type1 = Pokedex.getType();
-        //console.log("Start the battle!!");
-        /*efectividadPokemon(tipo1: string, tipo2: string, ataque1: number, ataque2: number){
-          var efectividad1: number = 1;
-          var efectividad2: number = 1;
-          if(tipo1 == "fuego"){
-            switch(tipo2){
-              case "agua":
-                efectividad1 = efectividad1*0.5;
-                efectividad2 = efectividad2*2;
-                break;
-              case "hierba":
-                efectividad1 = efectividad1*2;
-                efectividad2 = efectividad2*0.5;
-                break;
-               case "eléctrico":
-                efectividad1 = efectividad1*1;
-                efectividad2 = efectividad2*1;
-                break;
-              default:
-                efectividad1 = efectividad1*0.5;
-                break;
+        var attack1 = 75;
+        var attack2 = 100;
+        // Modificación método "efectividad() ejercicio 9 de la Práctica 3"
+        var efectividad1 = 1;
+        var efectividad2 = 1;
+        var dañoPoke1;
+        var dañoPoke2;
+        if (type1 == "fire") {
+            switch (type2) {
+                case "water":
+                    efectividad1 = efectividad1 * 0.5;
+                    efectividad2 = efectividad2 * 2;
+                    break;
+                case "grass":
+                    efectividad1 = efectividad1 * 2;
+                    efectividad2 = efectividad2 * 0.5;
+                    break;
+                case "electric":
+                    efectividad1 = efectividad1 * 1;
+                    efectividad2 = efectividad2 * 1;
+                    break;
+                default:
+                    efectividad1 = efectividad1 * 0.5;
+                    break;
             }
-           } else if(tipo1 == "agua"){
-              switch(tipo2){
-                case "fuego":
-                  efectividad1 = efectividad1*2;
-                  efectividad2 = efectividad2*0.5;
-                  break;
-                case "hierba":
-                  efectividad1 = efectividad1*0.5;
-                  efectividad2 = efectividad2*2;
-                  break;
-                 case "eléctrico":
-                  efectividad1 = efectividad1*0.5;
-                  efectividad2 = efectividad2*2;
-                  break;
+        }
+        else if (type1 == "water") {
+            switch (type2) {
+                case "fire":
+                    efectividad1 = efectividad1 * 2;
+                    efectividad2 = efectividad2 * 0.5;
+                    break;
+                case "grass":
+                    efectividad1 = efectividad1 * 0.5;
+                    efectividad2 = efectividad2 * 2;
+                    break;
+                case "electric":
+                    efectividad1 = efectividad1 * 0.5;
+                    efectividad2 = efectividad2 * 2;
+                    break;
                 default:
-                  efectividad1 = efectividad1*0.5;
-                  break;
-              }
-            } else if(tipo1 == "hierba"){
-              switch(tipo2){
-                case "fuego":
-                  efectividad1 = efectividad1*0.5;
-                  efectividad2 = efectividad2*2;
-                  break;
-                case "agua":
-                  efectividad1 = efectividad1*2;
-                  efectividad2 = efectividad2*0.5;
-                  break;
-                 case "eléctrico":
-                  efectividad1 = efectividad1*1;
-                  efectividad2 = efectividad2*1;
-                  break;
+                    efectividad1 = efectividad1 * 0.5;
+                    break;
+            }
+        }
+        else if (type1 == "grass") {
+            switch (type2) {
+                case "fire":
+                    efectividad1 = efectividad1 * 0.5;
+                    efectividad2 = efectividad2 * 2;
+                    break;
+                case "water":
+                    efectividad1 = efectividad1 * 2;
+                    efectividad2 = efectividad2 * 0.5;
+                    break;
+                case "electric":
+                    efectividad1 = efectividad1 * 1;
+                    efectividad2 = efectividad2 * 1;
+                    break;
                 default:
-                  efectividad1 = efectividad1*0.5;
-                  break;
-              }
-            } else if(tipo1 == "eléctrico"){
-              switch(tipo2){
-                case "fuego":
-                  efectividad1 = efectividad1*1;
-                  efectividad2 = efectividad2*1;
-                  break;
-                case "agua":
-                  efectividad1 = efectividad1*2;
-                  efectividad2 = efectividad2*0.5;
-                  break;
-                 case "hierba":
-                  efectividad1 = efectividad1*1;
-                  efectividad2 = efectividad2*1;
-                  break;
+                    efectividad1 = efectividad1 * 0.5;
+                    break;
+            }
+        }
+        else if (type1 == "electric") {
+            switch (type2) {
+                case "fire":
+                    efectividad1 = efectividad1 * 1;
+                    efectividad2 = efectividad2 * 1;
+                    break;
+                case "water":
+                    efectividad1 = efectividad1 * 2;
+                    efectividad2 = efectividad2 * 0.5;
+                    break;
+                case "grass":
+                    efectividad1 = efectividad1 * 1;
+                    efectividad2 = efectividad2 * 1;
+                    break;
                 default:
-                  efectividad1 = efectividad1*0.5;
-                  break;
-              }
-            } else {
-            console.log(`Tipos no reconocidos`)
-          }
-          var dañoPoke1= calcularDaño(ataque1, efectividad1);
-          dañoPoke1 = Math.round(dañoPoke1);
-          console.log(`Daño que causa tu equipo Pokemon: ${dañoPoke1}`);
-        
-          var dañoPoke2= calcularDaño(ataque2, efectividad2);
-          dañoPoke2 = Math.round(dañoPoke2);
-          console.log(`Daño que realiza el equipo rival: ${dañoPoke2}`);
-          
-        }*/
+                    efectividad1 = efectividad1 * 0.5;
+                    break;
+            }
+        }
+        else {
+            console.log("Tipos no reconocidos");
+        }
+        dañoPoke1 = 50 * (attack1 / 95) * efectividad1;
+        dañoPoke1 = Math.round(dañoPoke1);
+        dañoPoke2 = 50 * (attack2 / 85) * efectividad2;
+        dañoPoke2 = Math.round(dañoPoke2);
+        console.log("Da\u00F1o que causa tu equipo Pokemon: " + dañoPoke1);
+        console.log("Da\u00F1o que realiza el equipo rival: " + dañoPoke2);
+    };
+    Combat.prototype.start = function (namePokemon1, namePokemon2, hp1, hp2, dañoPoke1, dañoPoke2) {
+        console.log("START THE BATTLE!!!");
+        do {
+        } while (dañoPoke1 >= hp1 || dañoPoke2 >= hp2);
     };
     return Combat;
 }());
@@ -145,5 +167,8 @@ typePokemon.forEach(function (pokemon) {
 console.log("\u250C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 \u2218\u00B0\u2749\u00B0\u2218 \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n");
 console.log("\t\t       FIGHT\n");
 console.log("\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 \u00B0\u2218\u2749\u2218\u00B0 \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n");
-var pokemon_ = new Combat("serperior", "tepig");
-console.log(pokemon_.combat("serperior", "tepig"));
+var pokemon_ = new Combat(pok1.getType(), pok2.getType(), 75, 95);
+console.log(pokemon_.combat(pok1.getType(), pok2.getType()));
+var daño1 = pokemon_.getDaño1();
+var daño2 = pokemon_.getDaño2();
+console.log(pokemon_.start(pok1.getType(), pok2.getType(), 75, 95, daño1, daño2));
