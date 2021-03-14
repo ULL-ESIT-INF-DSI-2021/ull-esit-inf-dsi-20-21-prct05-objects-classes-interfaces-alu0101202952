@@ -220,13 +220,20 @@ var BM = /** @class */ (function () {
     BM.prototype.getTitle = function () {
         return this.title;
     };
-    /*
-        getAuthor(){
-          var aux: string = '';
-          for (var i = 0; i < this.author.length; i++) {
+    BM.prototype.getAuthor = function () {
+        var aux = '';
+        for (var i = 0; i < this.author.length; i++) {
             aux += this.author[i] + ', ';
-          } console.log(`Authors: ${aux}`);
-        }*/
+        }
+        console.log("Authors: " + aux);
+    };
+    BM.prototype.getEmailAuthor = function () {
+        var aux = '';
+        for (var i = 0; i < this.emailAuthor.length; i++) {
+            aux += this.emailAuthor[i] + ', ';
+        }
+        console.log("Contact (email): " + aux);
+    };
     BM.prototype.getAbstract = function () {
         return this.abstract;
     };
@@ -236,26 +243,18 @@ var BM = /** @class */ (function () {
     BM.prototype.getCitations = function () {
         return this.countCitations;
     };
-    BM.prototype.referenceAPAWDOI = function () {
-        /**
-         * formato APA sin DOI:
-         * Apellido [coma] inicial (es) del nombre del autor [punto] año entre paréntesis [punto] título del articulo [punto] título de
-         * la Revista en cursivas [coma] volumen (número entre paréntesis) [coma] la referencia a las páginas [punto]. Recuperado DE
-         * [insertar http: y el link]
-         */
-        console.log("Dahmani, I., Hifi, M., " + article1.getTitle + ", Ann Oper Res 298, 125\u2013147 (2021). https://doi.org/10.1007/s10479-019-03290-3");
-    };
     return BM;
 }()); //class BM ends
 exports.BM = BM;
-var article1 = new BM("A modified descent method-based heuristic for binary quadratic knapsack problems with conflict graphs", ["Isma Dahmani", "Mhand Hifi"], ["Isma Dahmani", "Mhand Hifi"], ["Descent", "Heuristic", "Knapsack", "Optimization"], "The knapsack problem arises in a variety of real world applications, including flexible manufacturing systems, railway stations, hydrological studies and others. In this paper, we propose a descent method-based heuristic for tackling a special knapsack problem: the binary quadratic knapsack with conflict graphs. The proposed method combines (i) an intensification search with a descent method for enhancing the accuracy of the solutions and (ii) a diversification strategy which is used for enlarging the search space. The method uses degrading and re-optimization strategies in order to reach a series of diversified solutions. The performance of the proposed method is evaluated on benchmark instances taken from the literature, where its achieved results are compared to those reached by both GLPK solver and the best method available in the literature. The method seems very competitive, where it is able to achieve 37 new lower bounds.", [17, 7, 2019], "Springer Nature", 2);
+var article1 = new BM("A modified descent method-based heuristic for binary quadratic knapsack problems with conflict graphs", ["Isma Dahmani", "Mhand Hifi"], ["IsmaDahmani@gmail.com", "MhandHifi@gmail.com"], ["Descent", "Heuristic", "Knapsack", "Optimization"], "The knapsack problem arises in a variety of real world applications, including flexible manufacturing systems, railway stations, hydrological studies and others. In this paper, we propose a descent method-based heuristic for tackling a special knapsack problem: the binary quadratic knapsack with conflict graphs. The proposed method combines (i) an intensification search with a descent method for enhancing the accuracy of the solutions and (ii) a diversification strategy which is used for enlarging the search space. The method uses degrading and re-optimization strategies in order to reach a series of diversified solutions. The performance of the proposed method is evaluated on benchmark instances taken from the literature, where its achieved results are compared to those reached by both GLPK solver and the best method available in the literature. The method seems very competitive, where it is able to achieve 37 new lower bounds.", [17, 7, 2019], "Springer Nature", 2);
 var databaseArticles = [article1];
 console.log("********************************************************************\n");
 databaseArticles.forEach(function (article) {
     console.log("Title: \"" + article.getTitle() + "\"\n");
+    console.log(article.getAuthor() + "\n");
+    console.log(article.getEmailAuthor() + "\n");
     console.log("Abstract: " + article.getAbstract() + "\n");
     console.log("Editorial: " + article.getEditorial() + "\n");
-    //console.log(`${article.getAuthor()}\n`);
     console.log("Citations: " + article.getCitations() + "\n");
-    console.log("\nReference APA formar without DOI: " + article.referenceAPAWDOI() + "\n");
+    //console.log(`\nReference APA formar without DOI: ${article.referenceAPAWDOI()}\n`);
 });

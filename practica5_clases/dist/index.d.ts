@@ -9,8 +9,9 @@ export declare class BM {
     private countCitations;
     constructor(title: String, author: any[] | undefined, emailAuthor: any[] | undefined, keywords: any[] | undefined, abstract: String, publicationDate: any[] | undefined, editorial: String, countCitations: number);
     getTitle(): String;
+    getAuthor(): void;
+    getEmailAuthor(): void;
     getAbstract(): String;
     getEditorial(): String;
     getCitations(): number;
-    referenceAPAWDOI(): void;
 }

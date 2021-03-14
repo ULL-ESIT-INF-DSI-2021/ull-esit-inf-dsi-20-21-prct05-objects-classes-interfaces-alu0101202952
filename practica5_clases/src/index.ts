@@ -229,6 +229,13 @@ export class Pokedex{
       } console.log(`Authors: ${aux}`);
     }
 
+    getEmailAuthor(){
+      var aux: string = '';
+      for (var i = 0; i < this.emailAuthor.length; i++) {
+        aux += this.emailAuthor[i] + ', ';
+      } console.log(`Contact (email): ${aux}`);
+    }
+
     getAbstract(){
       return this.abstract;
     }
@@ -256,16 +263,18 @@ export class Pokedex{
 
 
 
-  let article1 = new BM("A modified descent method-based heuristic for binary quadratic knapsack problems with conflict graphs", ["Isma Dahmani", "Mhand Hifi"], ["Isma Dahmani", "Mhand Hifi"], ["Descent", "Heuristic", "Knapsack", "Optimization"], "The knapsack problem arises in a variety of real world applications, including flexible manufacturing systems, railway stations, hydrological studies and others. In this paper, we propose a descent method-based heuristic for tackling a special knapsack problem: the binary quadratic knapsack with conflict graphs. The proposed method combines (i) an intensification search with a descent method for enhancing the accuracy of the solutions and (ii) a diversification strategy which is used for enlarging the search space. The method uses degrading and re-optimization strategies in order to reach a series of diversified solutions. The performance of the proposed method is evaluated on benchmark instances taken from the literature, where its achieved results are compared to those reached by both GLPK solver and the best method available in the literature. The method seems very competitive, where it is able to achieve 37 new lower bounds.", [17, 7, 2019], "Springer Nature" , 2)
+  let article1 = new BM("A modified descent method-based heuristic for binary quadratic knapsack problems with conflict graphs", ["Isma Dahmani", "Mhand Hifi"], ["IsmaDahmani@gmail.com", "MhandHifi@gmail.com"], ["Descent", "Heuristic", "Knapsack", "Optimization"], "The knapsack problem arises in a variety of real world applications, including flexible manufacturing systems, railway stations, hydrological studies and others. In this paper, we propose a descent method-based heuristic for tackling a special knapsack problem: the binary quadratic knapsack with conflict graphs. The proposed method combines (i) an intensification search with a descent method for enhancing the accuracy of the solutions and (ii) a diversification strategy which is used for enlarging the search space. The method uses degrading and re-optimization strategies in order to reach a series of diversified solutions. The performance of the proposed method is evaluated on benchmark instances taken from the literature, where its achieved results are compared to those reached by both GLPK solver and the best method available in the literature. The method seems very competitive, where it is able to achieve 37 new lower bounds.", [17, 7, 2019], "Springer Nature" , 2)
 
 
   let databaseArticles = [article1];
   console.log(`********************************************************************\n`);
   databaseArticles.forEach((article) => {
     console.log(`Title: "${article.getTitle()}"\n`);
+    console.log(`${article.getAuthor()}\n`);
+    console.log(`${article.getEmailAuthor()}\n`);
     console.log(`Abstract: ${article.getAbstract()}\n`);
     console.log(`Editorial: ${article.getEditorial()}\n`);
-    console.log(`${article.getAuthor()}\n`);
+    
     console.log(`Citations: ${article.getCitations()}\n`);
     //console.log(`\nReference APA formar without DOI: ${article.referenceAPAWDOI()}\n`);
  });   
