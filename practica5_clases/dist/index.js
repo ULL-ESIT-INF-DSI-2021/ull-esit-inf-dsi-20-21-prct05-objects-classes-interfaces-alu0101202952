@@ -330,21 +330,38 @@ export class BM{
 //EJERCICIO 3
 var Vehicles = /** @class */ (function () {
     function Vehicles(marca, modelo, antiguedad, color) {
-        this.marca = marca;
-        this.modelo = modelo;
-        this.antiguedad = antiguedad;
-        this.color = color;
+        Vehicles.marca = marca;
+        Vehicles.modelo = modelo;
+        Vehicles.antiguedad = antiguedad;
+        Vehicles.color = color;
     }
     return Vehicles;
-}());
+}()); //end class Vehicles
 exports.Vehicles = Vehicles;
 var VehiclesPrivate = /** @class */ (function (_super) {
     __extends(VehiclesPrivate, _super);
     function VehiclesPrivate(marca, modelo, antiguedad, color, tipo) {
-        return _super.call(this, marca, modelo, antiguedad, color) || this;
+        var _this = _super.call(this, marca, modelo, antiguedad, color) || this;
+        Vehicles.marca = marca;
+        Vehicles.modelo = modelo;
+        Vehicles.antiguedad = antiguedad;
+        Vehicles.color = color;
+        return _this;
     }
+    VehiclesPrivate.prototype.getMarca = function () {
+        return Vehicles.marca;
+    };
+    VehiclesPrivate.prototype.getModelo = function () {
+        return Vehicles.modelo;
+    };
+    VehiclesPrivate.prototype.getAntiguedad = function () {
+        return Vehicles.antiguedad;
+    };
+    VehiclesPrivate.prototype.getColor = function () {
+        return Vehicles.color;
+    };
     return VehiclesPrivate;
-}(Vehicles));
+}(Vehicles)); //end class VehiclesPrivate
 exports.VehiclesPrivate = VehiclesPrivate;
 var VehiclesPublic = /** @class */ (function (_super) {
     __extends(VehiclesPublic, _super);
@@ -354,3 +371,8 @@ var VehiclesPublic = /** @class */ (function (_super) {
     return VehiclesPublic;
 }(Vehicles));
 exports.VehiclesPublic = VehiclesPublic;
+var vehicle1 = new VehiclesPrivate("Seat", "Ibiza", 5, "azul", "turismo");
+var databaseVehicles = [vehicle1];
+databaseVehicles.forEach(function (vehicle) {
+    console.log("Mi coche es un " + vehicle.getMarca + " " + vehicle.getModelo + " con " + vehicle.getAntiguedad + " a\u00F1os, color " + vehicle.getColor);
+});
