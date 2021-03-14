@@ -221,14 +221,14 @@ export class Pokedex{
     getTitle(){
       return this.title;
     }
-
+/*
     getAuthor(){
       var aux:any = new Array();
       for (var i = 0; i < this.author.length; i++) {
         aux = this.author().push;
         console.log(aux);
       } 
-    }
+    }*/
 
     getAbstract(){
       return this.abstract;
