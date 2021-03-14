@@ -381,10 +381,10 @@ export class VehiclesPublic extends Vehicles {
   }
   getAntiguedad(){
     return Vehicles.antiguedad;
-  }/*
+  }
   getColor(){
     return Vehicles.color;
-  }
+  }/*
   getTipo(){
     return VehiclesPublic.tipo;
   }
@@ -399,12 +399,12 @@ let titsa = new VehiclesPublic("Scania", "K380", 8, "verde", "guagua", 55);
 let databaseVehiclesPrivate = [vehicle1];
 let databaseVehiclesPublic = [titsa];
 
-databaseVehiclesPrivate.forEach((vehicle) => {
-  console.log(`El vehículo privado es un ${vehicle.getMarca()} ${vehicle.getModelo()} con ${vehicle.getAntiguedad()} años, color ${vehicle.getColor() }, clase ${vehicle.getTipo()}`);
+databaseVehiclesPrivate.forEach((vehiclepr) => {
+  console.log(`El vehículo privado es un ${vehiclepr.getMarca()} ${vehiclepr.getModelo()} con ${vehiclepr.getAntiguedad()} años, color ${vehiclepr.getColor() }, clase ${vehiclepr.getTipo()}`);
 });
 
-databaseVehiclesPublic.forEach((vehicle) => {
-  console.log(`El vehículo público es un ${vehicle.getMarca()} ${vehicle.getModelo()} con ${vehicle.getAntiguedad()} años,`);
+databaseVehiclesPublic.forEach((vehiclepu) => {
+  console.log(`El vehículo público es un ${vehiclepu.getMarca()} ${vehiclepu.getModelo()} con ${vehiclepu.getAntiguedad()} años, color ${vehiclepu.getColor()}, `);
 });
-// color ${vehicle.getColor() }, clase ${vehicle.getTipo()}
+// clase ${vehicle.getTipo()}
 
