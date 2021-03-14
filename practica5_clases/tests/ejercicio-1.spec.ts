@@ -1,10 +1,10 @@
-/*import 'mocha';
+import 'mocha';
 import {expect} from 'chai';
-import {Pokedex} from '../src/index';
-import {Combat} from '../src/index';
+import {Pokedex} from '../src/ejercicio-1';
+import {Combat} from '../src/ejercicio-1';
 
-let pok1 = new Pokedex("serperior", 63.0, 3.3, "grass",(attack, defense, speed, hp) => [75, 95, 113, 75]);
-let pok2 = new Pokedex("samurott", 94.6, 1.5, "water",(attack, defense, speed, hp) => [100, 85, 70, 95]);
+let pok1 = new Pokedex("serperior", 63.0, 3.3, "grass",[75, 95, 113, 75]);
+let pok2 = new Pokedex("samurott", 94.6, 1.5, "water",[100, 85, 70, 95]);
 
 let pokemon_ = new Combat(pok1.getType(), pok2.getType());
 
@@ -46,4 +46,4 @@ describe('combat', () => {
     return expect(pokemon_.start(pok1.getType(), pok2.getType(), 75, 95)).to.be.equal("serperior");
   })
 });
-*/
+

@@ -1,50 +1,21 @@
-export declare class Vehicles {
-    static modelo: string;
-    static antiguedad: number;
-    static color: string;
-    static marca: string;
-    constructor(marca: string, modelo: string, antiguedad: number, color: string);
+export declare class Pokedex {
+    private name;
+    private weight;
+    private height;
+    private type;
+    private stats;
+    static pokemon: any;
+    constructor(name: string, weight: number, height: number, type: string, stats?: any[]);
+    getName(): string;
+    getWeight(): number;
+    getHeight(): number;
+    getType(): string;
+    getStats(): void;
 }
-export interface Movable {
-    numRuedas: number;
-    motor: string;
-    cv: number;
-}
-export declare class VehiclesPrivate extends Vehicles implements Movable {
-    readonly numRuedas: number;
-    readonly motor: string;
-    readonly cv: number;
-    static tipo: string;
-    static numRuedas: number;
-    static motor: string;
-    static cv: number;
-    constructor(marca: string, modelo: string, antiguedad: number, color: string, tipo: string, numRuedas: number, motor: string, cv: number);
-    getMarca(): string;
-    getModelo(): string;
-    getAntiguedad(): number;
-    getColor(): string;
-    getTipo(): string;
-    getNumRuedas(): number;
-    getMotor(): string;
-    getCV(): number;
-}
-export declare class VehiclesPublic extends Vehicles implements Movable {
-    readonly numRuedas: number;
-    readonly motor: string;
-    readonly cv: number;
-    static tipo: string;
-    static capacidadPasajeros: number;
-    static numRuedas: number;
-    static motor: string;
-    static cv: number;
-    constructor(marca: string, modelo: string, antiguedad: number, color: string, tipo: string, capacidadPasajeros: number, numRuedas: number, motor: string, cv: number);
-    getMarca(): string;
-    getModelo(): string;
-    getAntiguedad(): number;
-    getColor(): string;
-    getTipo(): string;
-    getCapacidad(): number;
-    getNumRuedas(): number;
-    getMotor(): string;
-    getCV(): number;
+export declare class Combat {
+    type1: string;
+    type2: string;
+    constructor(type1: string, type2: string);
+    combat(type1: string, type2: string): void;
+    start(type1: string, type2: string, hp1: number, hp2: number): void;
 }
