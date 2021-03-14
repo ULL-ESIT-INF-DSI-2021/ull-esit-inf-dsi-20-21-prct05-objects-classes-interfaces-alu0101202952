@@ -35,4 +35,7 @@ describe('VehiclePublic', () => {
   it('titsa.getAntigüdad() returns antigüedad of titsa guagua', () => {
     return expect(titsa.getAntiguedad()).to.be.equal(8);
   })
+  it('titsa.getColor() returns color of titsa guagua', () => {
+    return expect(titsa.getColor()).to.be.equal("verde");
+  })
 });
