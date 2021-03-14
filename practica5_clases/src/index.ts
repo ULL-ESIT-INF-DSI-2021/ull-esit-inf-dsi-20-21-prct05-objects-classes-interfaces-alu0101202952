@@ -329,12 +329,14 @@ export class Vehicles {
 } //end class Vehicles
 
 export class VehiclesPrivate extends Vehicles {
+  static tipo: string;
   constructor(marca: string, modelo: string, antiguedad: number, color: string, tipo:string){
     super(marca, modelo,antiguedad,color);
     Vehicles.marca = marca;
     Vehicles.modelo = modelo;
     Vehicles.antiguedad = antiguedad;
     Vehicles.color = color;
+    VehiclesPrivate.tipo = tipo;
   }
 
   getMarca(){
@@ -352,6 +354,10 @@ export class VehiclesPrivate extends Vehicles {
   getColor(){
     return Vehicles.color;
   }
+
+  getTipo(){
+    return VehiclesPrivate.tipo;
+  }
 } //end class VehiclesPrivate
 
 export class VehiclesPublic extends Vehicles {
@@ -364,5 +370,5 @@ export class VehiclesPublic extends Vehicles {
 let vehicle1 = new VehiclesPrivate("Seat", "Ibiza", 5, "azul", "turismo");
 let databaseVehicles = [vehicle1];
 databaseVehicles.forEach((vehicle) => {
-  console.log(`Mi coche es un ${vehicle.getMarca} ${vehicle.getModelo} con ${vehicle.getAntiguedad} años, color ${vehicle.getColor}`);
+  console.log(`Mi coche es un ${vehicle.getMarca()} ${vehicle.getModelo()} con ${vehicle.getAntiguedad()} años, color ${vehicle.getColor() }, clase ${vehicle.getTipo()}`);
 });
