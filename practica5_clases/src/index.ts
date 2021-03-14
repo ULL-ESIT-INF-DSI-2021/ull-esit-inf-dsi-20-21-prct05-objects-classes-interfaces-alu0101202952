@@ -228,7 +228,10 @@ export class Pokedex{
         aux = this.author().push;
         console.log(aux);
       } 
-     
+    }
+
+    getAbstract(){
+      return this.abstract;
     }
   } //class BM ends
 
