@@ -336,7 +336,8 @@ export interface Movable{
 
 export class VehiclesPrivate extends Vehicles implements Movable {
   static tipo: string;
-  static numRuedas: number
+  static numRuedas: number;
+  static motor: string
   constructor(marca: string, modelo: string, antiguedad: number, color: string, tipo:string, public readonly numRuedas: number, public readonly motor: string, public readonly cv: number){
     super(marca, modelo,antiguedad,color);
     VehiclesPrivate.marca = marca;
@@ -345,7 +346,7 @@ export class VehiclesPrivate extends Vehicles implements Movable {
     VehiclesPrivate.color = color;
     VehiclesPrivate.tipo = tipo;
     VehiclesPrivate.numRuedas = numRuedas;
-    
+    VehiclesPrivate.motor = motor;
   }
   getMarca(){
     return VehiclesPrivate.marca;
@@ -364,6 +365,9 @@ export class VehiclesPrivate extends Vehicles implements Movable {
   }
   getNumRuedas(){
     return VehiclesPrivate.numRuedas;
+  }
+  getMotor(){
+    return VehiclesPrivate.motor;
   }
 } //end class VehiclesPrivate
 
@@ -416,7 +420,7 @@ console.log(`VEHÍCULOS PRIVADOS`);
 console.log(`***********************************************************************************`);
 
 databaseVehiclesPrivate.forEach((vehiclepr) => {
-  console.log(`+ El vehículo privado es un ${vehiclepr.getMarca()} ${vehiclepr.getModelo()} con ${vehiclepr.getAntiguedad()} años, color ${vehiclepr.getColor() }, clase ${vehiclepr.getTipo()}, con ${vehiclepr.getNumRuedas()}`);
+  console.log(`+ El vehículo privado es un ${vehiclepr.getMarca()} ${vehiclepr.getModelo()} con ${vehiclepr.getAntiguedad()} años, color ${vehiclepr.getColor() }, clase ${vehiclepr.getTipo()}, con ${vehiclepr.getNumRuedas()}, tipo ${vehiclepr.getMotor()}`);
 });
 
 console.log(`\n\n***********************************************************************************`);
