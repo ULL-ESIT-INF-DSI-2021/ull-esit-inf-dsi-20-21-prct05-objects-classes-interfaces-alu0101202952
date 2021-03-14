@@ -415,6 +415,9 @@ export class VehiclesPublic extends Vehicles implements Movable {
   getNumRuedas(){
     return VehiclesPublic.numRuedas;
   }
+  getMotor(){
+    return VehiclesPublic.motor;
+  }
 }
 
 
@@ -442,7 +445,7 @@ console.log(`VEHÍCULOS PÚBLICOS`);
 console.log(`***********************************************************************************`);
 
 databaseVehiclesPublic.forEach((vehiclepu) => {
-  console.log(`+ El vehículo público es un ${vehiclepu.getMarca()} ${vehiclepu.getModelo()} con ${vehiclepu.getAntiguedad()} años, color ${vehiclepu.getColor()}, clase ${vehiclepu.getTipo()}, con capacidad de ${vehiclepu.getCapacidad()} pasajeros, con ${vehiclepu.getNumRuedas()},`);
+  console.log(`+ El vehículo público es un ${vehiclepu.getMarca()} ${vehiclepu.getModelo()} con ${vehiclepu.getAntiguedad()} años, color ${vehiclepu.getColor()}, clase ${vehiclepu.getTipo()}, con capacidad de ${vehiclepu.getCapacidad()} pasajeros, con ${vehiclepu.getNumRuedas()}, tipo ${vehiclepu.getMotor()}`);
 });
 
 
