@@ -223,3 +223,10 @@ export class Pokedex{
     }
   } //class BM ends
 
+
+  let databaseArticles: any[] = [];
+  console.log(`********************************************************************\n`);
+  databaseArticles.forEach((article) => {
+    console.log(`Title ${article} : ${article.getTitle()}\n`);
+    console.log(`\n`);
+ });   

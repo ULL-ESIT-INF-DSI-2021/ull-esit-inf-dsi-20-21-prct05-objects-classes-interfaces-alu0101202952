@@ -9,5 +9,9 @@ describe('BM (Bibliographic Manager)', () => {
     it('article1.getTitle() returns title of article1', () => {
       return expect(article1.getTitle()).to.be.equal("A modified descent method-based heuristic for binary quadratic knapsack problems with conflict graphs");
     })
+
+    it('article1.getAuthor() returns authors of article1', () => {
+        return expect(article1.getAuthor()).to.be.equal(() =>["Isma Dahmani", "Mhand Hifi]"]);
+      })
 });
 
