@@ -58,4 +58,7 @@ describe('VehiclePublic', () => {
   it('titsa.getNumRuedas() returns numero de ruedas of titsa', () => {
     return expect(titsa.getNumRuedas()).to.be.equal(4);
   })
+  it('titsa.getMotor() returns tipo de motor of titsa', () => {
+    return expect(titsa.getMotor()).to.be.equal("motor diesel");
+  })
 });
