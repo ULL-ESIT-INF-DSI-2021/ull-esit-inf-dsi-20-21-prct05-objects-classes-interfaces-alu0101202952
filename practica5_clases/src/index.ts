@@ -217,9 +217,9 @@ export class Pokedex{
       this.editorial = editorial;
       this.countCitations = countCitations;
     }
-/*
+
     getTitle(){
       return this.title;
-    }*/
+    }
   } //class BM ends
 
