@@ -32,4 +32,7 @@ describe('VehiclePublic', () => {
   it('titsa.getModelo() returns modelo of titsa guagua', () => {
     return expect(titsa.getModelo()).to.be.equal("K380");
   })
+  it('titsa.getAntigüdad() returns antigüedad of titsa guagua', () => {
+    return expect(titsa.getAntiguedad()).to.be.equal(8);
+  })
 });
