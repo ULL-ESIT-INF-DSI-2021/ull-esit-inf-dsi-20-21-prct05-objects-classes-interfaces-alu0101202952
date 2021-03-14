@@ -28,8 +28,9 @@ describe('VehiclePrivate', () => {
   it('vehicle1.getMotor() returns tipo de motor of vehicle1', () => {
     return expect(vehicle1.getMotor()).to.be.equal("motor gasolina");
   })
-
-
+  it('vehicle1.getCV() returns caballaje of vehicle1', () => {
+    return expect(vehicle1.getCV()).to.be.equal(45);
+  })
 });
 
 
