@@ -28,16 +28,15 @@
   - Instalación, configuración Typedoc
   - Instalación, configuración Mocha y Chai
   - Pruebas Unitarias estructura
-  - Ejercicios en TypeScript 
-    - Ejercicio 1
-    -   Prueba Unitaria
-    -   Desarrollo del código
-    - Ejercicio 2
-    -   Prueba Unitaria
-    -   Desarrollo del código
-    - Ejercicio 3
-    -   Prueba Unitaria
-    -   Desarrollo del código
+  - Ejercicio 1
+    - Prueba Unitaria
+    - Desarrollo del código
+  - Ejercicio 2
+    - Prueba Unitaria
+    - Desarrollo del código
+  - Ejercicio 3
+    - Prueba Unitaria
+    - Desarrollo del código
   - Desarrollo del informe con GitHub Pages
   - Conclusiones
   - Bibliografía y/o Webgrafía
@@ -174,68 +173,152 @@ Finalizando así la documentación con Typedoc.
 
 
 
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+
+
+## INSTALACIÓN. CONFIGURACIÓN MOCHA Y CHAI
+
+En este apartado como ya hemos hecho en la anterior práctica, Práctica 4, tendremos que volver a ejecutar dichos pasos para poder trabajar con Pruebas Unitarias con las herramientas **Mocha** y **Chai**. Primero instalaremos las dependencias y paquetes de Mocha y chai. Para ello ejecutaremos:
+
+![Instalación Mocha y Chai](https://i.imgur.com/gWbjkmH.jpg)
+
+A continuación con el comando `touch .mocharc.json` crearemos el fichero de configuración de la herramienta Mocha, este irá en la raíz de el proyecto y nos indicará utilidades para hacer TDD, es decir las pruebas unitarias. Para ello le indicaremos que las pruebas unitaras se alojarán en el directorio **./tests** y tendrán una terminología de **.spec.ts**. Esto quedaría:
+
+![configuración .mocharc.json](https://i.imgur.com/AyLzjOg.jpg)
+
+Ya tendremos una configuración básica de la herramienta, pero necesito crear el directorio **./tests** y los ficheros que tendrán las pruebas unitarias de los 3 ejercicios que se nos plantean, tendrá una estructura > `ejercicio-n.spec.ts`, siendo n = [1-3], con la enumeración de cada ejercicio. Sería:
+
+![directorio tests](https://i.imgur.com/YTUSKs6.jpg)
+
+Como ha pasado con la herramienta **Typedoc** indicaremos en el **package.json** con qué comando, ejecutaremos la herramienta de mocha. Esta herramienta se ejecuta tal que `npm run [nombre_de_invocación]`, el nombre de invocación en nuestro caso será **test**, quedando el comando completo para ejecutar las pruebas unitarias de la forma: 
+
+> `npm run test`
+
+Este nombre de invocación es el que configuraremos en el package.json, quedando:
+
+![mocha en package.json](https://i.imgur.com/XwoWYpo.jpg)
+
+Finalizando con todo esto la configuración de las herramientas necesarias para ejecutar los ejercicios mediante TDD. Quedando la estructura final con los ficheros .gitignore además del .nojekyll, los cuales no se nombraron pero porque se dan por hechos, como:
+
+![Estructura final proyecto](https://i.imgur.com/6e75OU1.jpg)
+ 
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━✧❂✧━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+
+
+### PRUEBAS UNITARIAS ESTRUCTURA
+
+Ya desde la práctica 4 empleamos pruebas unitarias, pero en esta práctica ya las ponemos 100% en uso. El sistema que emplearemos en TDD, será:
+
+1. Creamos una prueba unitaria, con la forma `ejercicio-n.spec.ts`, siendo n = [1-3], en este caso, y alojado en el directorio `./tests`. Tendremos que añadir las dependencias de paquetes de las herramientas Mocha y Chai de la forma:
+
+> `import 'mocha';
+ import {expect} from 'chai';`
+
+2. Además añadimos la clase a la que le realizaremos dichas pruebas unitarias y la ruta donde está alojada dicha clase, de la forma:
+
+Este ejemplo es la prueba unitaria real del código asociado al ejercicio 1.
+
+> `import {Pokedex} from '../src/index';
+import {Combat} from '../src/index';`
+
+Con esta incorporación se debe modificar en el código del ejercicio y poner **export**, de la forma:
+
+> `export class Pokedex {}`
+
+3. Describir a continuación las operatorias que se harán en esa pueba unitaria (`it('pokedex')`).
+4. Finalmente concluyendo con la expectativa que se quiere conseguir (`expect().to.be.equal()`).
+
+Esto sería un concepto básico de cómo rellenar una prueba unitaria para empezar a comprobar mediante TDD si nuestro código funciona. 
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━✧❂✧━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ 
+ 
+La metodología que se emplea es:
+
+1. Escribimos en el fichero **.spec.ts** la expectativa que se espera conseguir de algún método o del propio funcionamiento de la clase.
+2. Se comprueba que falla tras hacer `npm run test` porque no está la clase o el método a comprobar.
+3. Se guarda dicho fallo con:
+
+> `git add .`
+
+> `git commit -m "Fallo test de crear la clase Pokedex"`
+
+> `git push --all`
+
+
+4. Se redacta en el fichero asociado con el código el método o la clase que queremos que haga cierta funcionalidad, etc.
+5. Se ejecuta de nuevo el comando para realizar la comprobación de la expectativa (`npm run test`).
+6. Y si todo está bien planteado saldría válida o correcta la prueba unitaria sin fallos.
+7. Se guarda dicho acierto con:
+
+> `git add .`
+
+> `git commit -m "Acierto test de crear la clase Pokedex"`
+
+> `git push --all`
+
+
+Con esto en claro sobre cómo realizaría mis pruebas unitarias, se puede proseguir con el planteamiento de los ejercicios.
 
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
 
-
-## INSTALACIÓN. CONFIGURACIÓN MOCHA Y CAHI
-
-
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━✧❂✧━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
 ### EJERCICIO 1
 
-/**
- * ### EJERCICIO 1:
- * #### ¿En qué consiste?
- * Pasas al programa un año y si cumple las condiciones establecidas te dirá si el año es bisiesto o no
- * @param year Consiste en el año que pasaremos a la función para ver si es bisiesto
- * @return `true` Si el año es bisiesto 
- * @return `false` Si el año **NO** es bisiesto
- * 
- */
- 
- 
- /**
- * ```typescript
- * leapYear = isLeapYear(1997)
- * @return `false`
- * ```
- */
+El apartado del ejercicio 1, alojado en [link Enunciado de la Práctica 5](https://ull-esit-inf-dsi-2021.github.io/prct05-objects-classes-interfaces/) me hace replantear la siguiente estructura que formulé para el planteamiento del ejercicio:
 
+**CLASE POKEDEX**
+
+![Estructura class Pokedex](https://i.imgur.com/TUDyea9.jpg) 
+
+Como podemos ver en el esquema que me planteo es hacer una clase _Pokedex_ primero, esta tendrá las propiedades del **nombre del pokemon**, el **peso**, la **altura** y el **tipo** cuyo nivel de acceso será **privado**. Esto porque son valores que no quiero que se modifiquen ante nada. Y la propiedad **stats**, las estadísticas del pokemon, será un array de arrays que me tenga en ello los valores del ataque, defensa, velocidad y vida del Pokemon y cuyo nivel de acceso es público, pues no son valores que sean fijos y no se deban cambiar, además son arrays de arrays por si incluímos otros valores, como el Ataque y la defensa especial, para que sea más escalable dicha propiedad.
+
+Además las funciones que tendrá asociada la clase _Pokedex_ son el constructor, para definir las anteriores propiedades nombradas, y los **getters**, pues es una buena práctica trabajar con los getters de las propiedades antes que con las susodichas. 
+
+
+**CLASE COMBAT**
+
+![Estructura class Combat](https://i.imgur.com/WIIOd4Q.jpg)
+
+Como podemos observar en el esquema también me planteo la otra clase, teniendo así en mi código final de este ejercicio **2 clases**, esta clase _Combat_, tendrá como propiedades de acceso público los **tipos** de los dos pokemon que combatirán. 
+
+Además tiene como funciones, un constructor para definir las anteriores propiedades, una función **combat** esta recibirá los dos tipos de los pokemon, y con la ayuda de la función de mi ejercicio 9 de la práctica 3, obtendremos la efectividad y daño que efectuará cada pokemon respecto a su tipo. Finalmente encontramos la función **start** la cual no sólo recibirá los dos tipos de los pokemon sino también su vida y hará uso de las reglas impuestas en el enunciado como del daño que realiza cada pokemon y queda reflejado en la anterior función **combat**.
+
+
+Como podemos ver el planteamiento que se tomó se comenzó luego por las pruebas unitarias.
+
+
+#### PRUEBAS UNITARIAS
+
+Ya tenía el anterior esquema mental, entonces procedería a la metodología TDD, desarrollando la prueba unitaria correspondiente. 
+
+Comencé comprobando así que la clase _Pokedex_ podía inicializar los valores del getter si le pasaba un Pokemon con sus datos. Quedando los pasos que realicé de la siguiente forma:
+
+1. Declaré dos pokemon **pok1** que sería un ["Serperior"](https://pokemondb.net/pokedex/serperior) con sus respectivos datos y un ["Samurott"](https://pokemondb.net/pokedex/samurott) con sus respectivos datos, ambos serían objetos de la clase Pokedex. Y la expectativa primera fue la que me sacara los nombres de los pokemon, quedando el `expect`:
+
+![Expect fallo salida nombre Pokemon](https://i.imgur.com/q0vtxlF.jpg)
+
+2. Ejecuté `npm run test` y me salió fallida la prueba, como se esperaba, pues no existía tal getter:
+
+![Expect fallo salida nombre Pokemon](https://i.imgur.com/3UbqKQC.jpg)
+
+3. 
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━✧❂✧━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
 
 
 ### EJERCICIO 2
 
-/**
- * ### EJERCICIO 2:
- * #### ¿En qué consiste?
- * Dos funciones, una te convierte el decimal en notación factorial y la otra el factorial en notación decimal
- * ##### FUNCIÓN `decimalToFactorial`
- * @param ndecimal Consiste en el decimal que pasaremos a la función para convertirlo en su notación factorial
- * @return `factorial` correspondiente
- * ##### FUNCIÓN `maxfactorial`
- * @param ndecimal Consiste en el decimal que pasaremos a la función para encontrar el máximo factorial por el que se puede dividir
- * @return `factorialrecursive` el factorial correspondiente de llamar a la función recursiva que calcula los factoriales
- * ##### FUNCIÓN `factorialrecursive`
- * @param nfactorial Consiste en el factorial que pasaremos a la función para encontrar su resultado
- * @return `nfactorial * factorialrecursive (nfactorial-1)` el factorial correspondiente 
- */
 
-
-/**
- * ```typescript
- * resultado = decimalToFactorial(463)
- * @return 341010
- * ```
- */
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━✧❂✧━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -243,227 +326,9 @@ Finalizando así la documentación con Typedoc.
 
 ### EJERCICIO 3
 
-/**
- * ### EJERCICIO 3:
- * #### ¿En qué consiste?
- * Queremos comprobar la validez de un determinado mensaje en función de unas reglas preestablecidas.
- * @param cadena Consiste en la cadena alfanumérica que pasaremos del estilo `2hi`
- * @return `true` Si es válida la cadena según dichas reglas
- * @return `false` Si **NO** es válida la cadena según dichas reglas
- * 
- */
- 
- 
- /**
- * ```typescript
- * 
- * result1 = isValid("2hi")
- * @return `true`
- * 
- * result2 = isValid("5hello")
- * @return `true`
- * 
- * result3 = isValid("2hi3")
- * @return `false`
- * 
- * result4 = isValid("2hiii")
- * @return `false`
- * ```
- */
-
-
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━✧❂✧━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-### EJERCICIO 4
-
-/**
- * ### EJERCICIO 4:
- * #### ¿En qué consiste?
- * Pasas al programa dos patrones de nombrar variables tipo : SnakeCase y CamelCase (`hola_mundo` y `holaMundo`), respectivamente y puede pasar de un tipo de patrón al otro con dos funciones **fromSnakeToCamelCase** y **fromCamelToSnakeCase**
- * #### FUNCIÓN `fromSnakeToCamelCase`
- * @param cadenasnake Consiste en la cadena que cumple con las reglas de patrón de **SnakeCase**
- * @return cadenacamel la cadena correspondiente pero con el patrón **CamelCase**
- * #### FUNCIÓN `fromCamelToSnakeCase`
- * @param cadenacamel Consiste en la cadena que cumple con las reglas de patrón de **CamelCase**
- * @return cadenasnake la cadena correspondiente pero con el patrón **SnakeCase**
- * 
- */
- 
- /**
- * ```typescript
- * 
- * cadena_snake = "sample_string";
- * @return `sampleString`
- * 
- * cadenaCamel = "sampleString";
- * @return `sample_string`
- * ```
- */
-
-
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━✧❂✧━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-### EJERCICIO 5
-
-/**
- * ### EJERCICIO 5:
- * #### ¿En qué consiste?
- * Pasas al programa una cadena a la cual se le eliminan las 'a' y 'e', para ello hacemos uso de expresiones regulares
- * @param cadena Consiste en la cadena a la cual se eliminarán las a'es y la e's.
- * @return `resultado` la cadena que ya tiene dichas vocales eliminadas.
- * 
- */
-
-/**
- * @param reemplazo1 Es una expresión regular a la cual se le han eliminado las a's, con el flag `g` conseguimos que se repita en toda la cadena que se lee
- */
-var reemplazo1 = /a/g;
-/**
- * @param reemplazo2 Es una expresión regular a la cual se le han eliminado las e's, con el flag `g` conseguimos que se repita en toda la cadena que se lee
- */
- 
- /**
- * ```typescript
- * cadena = "Beard Jeans Hairbrush Knuckleduster Sand"
- * @return `=> Brd Hirbrush Jns Knuckldustr Snd`
- * ```
- */
- 
- 
- 
-━━━━━━━━━━━━━━━━━━━━━━━━━━✧❂✧━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-### EJERCICIO 6
-
-/**
- * ### EJERCICIO 6:
- * #### ¿En qué consiste?
- * Programa basado en el [Proceso de verificación ISBN-10](https://en.wikipedia.org/wiki/International_Standard_Book_Number) se usa para validar la identificación de números. Normalmente contienen guiones y siguen un patrón como: 3-598-21508-8.
- * @param cadena Consiste en la cadena correspondiente al código ISBN que se le pasa para validar la identificación de los números
- * @return `true` Si el ISBN cumple las reglas, es decir, es válido 
- * @return `false` Si el ISBN **NO** cumple las reglas, es decir, es válido
- * 
- */
- 
- /**
- * ```typescript
- * ISBN = "3-598-21508-7";
- * @return `false`
- * ```
- */
- 
- 
- 
- ━━━━━━━━━━━━━━━━━━━━━━━━━━✧❂✧━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-### EJERCICIO 7
-
-/**
- * ### EJERCICIO 7:
- * #### ¿En qué consiste?
- * El programa recibe como parámetro un entero positivo y devuelve el siguiente número mayor que pueda ser formado al reposicionar sus dígitos.
- * @param cifra Consiste en el número con mínimo dos dígitos para poder reposicionar dichos dígitos entre sí
- * @return `resultado` El número siguiente mayor que puede ser formado al reposicionar los dígitos de `cifra`.
- * 
- */
- 
- /**
- * ```typescript
- * cifrain = 12;
- * @return `21`
- * ```
- */
-
-
-
- ━━━━━━━━━━━━━━━━━━━━━━━━━━✧❂✧━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-### EJERCICIO 8
-
-/**
- * ### EJERCICIO 8:
- * #### ¿En qué consiste?
- * A partir de cadenas de texto que representan direcciones IPv4, la función recibe como parámetros dos cadenas y devuelve un valor numérico que representa el número de IPs disponibles en el rango correspondiente.
- * @param ips1 Consiste en la cadena con la IP de del rango mínimo
- * @param ips2 Consiste en la cadena con la IP de del rango mayor 
- * @return `resultado` El rango que sale de la diferencia entre la `ips2`(ip con rango mayor) y `ips1`(ip con rango menor)
- * 
- */
- 
- /**
- * ```typescript
- * ips_1 = "10.0.0.0";
- * ips_2 = "10.0.0.50";
- * @return `Rango == 50`
- * ```
- */
- 
- 
- 
-━━━━━━━━━━━━━━━━━━━━━━━━━━✧❂✧━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-### EJERCICIO 9
-
-/**
- * ### EJERCICIO 9:
- * #### ¿En qué consiste?
- * Pasas al programa el tipo de tu pokemon, el tipo del pokemon rival, la capacidad de ataque de tu pokemon y la capacidad de ataque del pokemon rival y te saca cuanto daño haces tu y cuanto daño te hace el rival con la fórmula del daño de la función adicional `calcularDaño`
- * #### FUNCIÓN **efectividadPokemon**
- * @param tipo1 Consiste en el tipo de tu pokemon (fuego|agua|hierba|eléctrico)
- * @param tipo2 Consiste en el tipo del pokemon rival (fuego|agua|hierba|eléctrico)
- * @param ataque1 Consiste en la capacidad de ataque de tu pokemon
- * @param ataque2 Consiste en la capacidad de ataque del pokemon rival
- * @return `efectividad1` y `efectividad2` Consiste en las efectividades del tipo del pokemon tuyo y el pokemon rival, respectivamente
- * #### FUNCIÓN **calcularDaño**
- * @param ataque Recibe el ataque del tipo
- * @param efectividad Recibe la efectividad
- * @return `daño` con la fórmula, teniendo la defensa predefinida a _204_, como estándar, el ataque y la efectividad se calcula el daño que hace el pokemon.
- * 
- */
- 
- /**
- * ```typescript
- * pokemon1 = "eléctrico";
- * pokemon2 = "agua";
- * capacidad_ataque1 = 100;
- * capacidad_ataque2 = 160;
- * @return `Daño que causa tu equipo Pokemon: ${dañoPoke1}`
- * @return `Daño que realiza el equipo rival: ${dañoPoke2}`
- * ```
- */
- 
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━✧❂✧━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-### EJERCICIO 10
-
-/**
- * ### EJERCICIO 10:
- * #### ¿En qué consiste?
- * Programa que comprueba la validez de un nombre de usuario según unos criterios
- * @param usuario Consiste en el nombre de usuario que le pasamos para validar
- * @return `true` Si es válido 
- * @return `false` Si  **NO** es válido
- * 
- */
- 
- 
- /**
- * ```typescript
- * user_in = "hola";
- * @return `false`
- * ```
- */
 
  
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
