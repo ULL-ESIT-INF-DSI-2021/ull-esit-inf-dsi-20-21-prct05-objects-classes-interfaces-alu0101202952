@@ -237,6 +237,10 @@ export class Pokedex{
     getEditorial(){
       return this.editorial;
     }
+
+    getCitations(){
+      return this.countCitations;
+    }
   } //class BM ends
 
 
@@ -250,4 +254,5 @@ export class Pokedex{
     console.log(`Title: "${article.getTitle()}"\n`);
     console.log(`Abstract: ${article.getAbstract()}\n`);
     console.log(`Editorial: ${article.getEditorial()}\n`);
+    console.log(`Citations: ${article.getCitations()}\n`);
  });   
