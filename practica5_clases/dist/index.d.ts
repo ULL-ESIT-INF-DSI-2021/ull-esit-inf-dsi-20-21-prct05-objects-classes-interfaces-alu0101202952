@@ -7,7 +7,10 @@ export declare class BM {
     private publicationDate;
     private editorial;
     private countCitations;
-    constructor(title: String, author: () => string[], emailAuthor: () => string[], keywords: () => string[], abstract: String, publicationDate: (day: number, month: number, year: number) => number[], editorial: String, countCitations: number);
+    constructor(title: String, author: any[] | undefined, emailAuthor: any[] | undefined, keywords: any[] | undefined, abstract: String, publicationDate: any[] | undefined, editorial: String, countCitations: number);
     getTitle(): String;
-    getAuthor(): void;
+    getAbstract(): String;
+    getEditorial(): String;
+    getCitations(): number;
+    referenceAPAWDOI(): void;
 }
