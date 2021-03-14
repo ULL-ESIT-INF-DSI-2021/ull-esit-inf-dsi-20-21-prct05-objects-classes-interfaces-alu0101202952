@@ -336,6 +336,7 @@ export interface Movable{
 
 export class VehiclesPrivate extends Vehicles implements Movable {
   static tipo: string;
+  static numRuedas: number
   constructor(marca: string, modelo: string, antiguedad: number, color: string, tipo:string, public readonly numRuedas: number, public readonly motor: string, public readonly cv: number){
     super(marca, modelo,antiguedad,color);
     VehiclesPrivate.marca = marca;
@@ -343,6 +344,8 @@ export class VehiclesPrivate extends Vehicles implements Movable {
     VehiclesPrivate.antiguedad = antiguedad;
     VehiclesPrivate.color = color;
     VehiclesPrivate.tipo = tipo;
+    VehiclesPrivate.numRuedas = numRuedas;
+    
   }
   getMarca(){
     return VehiclesPrivate.marca;
@@ -358,6 +361,9 @@ export class VehiclesPrivate extends Vehicles implements Movable {
   }
   getTipo(){
     return VehiclesPrivate.tipo;
+  }
+  getNumRuedas(){
+    return VehiclesPrivate.numRuedas;
   }
 } //end class VehiclesPrivate
 
