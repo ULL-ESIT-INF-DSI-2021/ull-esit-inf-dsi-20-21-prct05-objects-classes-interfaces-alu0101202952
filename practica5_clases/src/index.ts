@@ -353,4 +353,8 @@ export class VehiclesPublic extends Vehicles {
 }
 
 
-
+let vehicle1 = new VehiclesPrivate("Seat", "Ibiza", 5, "azul", "turismo");
+let databaseVehicles = [vehicle1];
+databaseVehicles.forEach((vehicle) => {
+  console.log(`Mi coche es un ${vehicle.getMarca} ${vehicle.getModelo} con "+this.antiguedad+" años, clase "+this.tipo+" y color "+this.color`);
+});
