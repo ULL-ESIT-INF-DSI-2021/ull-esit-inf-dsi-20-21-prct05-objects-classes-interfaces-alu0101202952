@@ -21,5 +21,8 @@ describe('BM (Bibliographic Manager)', () => {
     it('article1.getEditorial() returns editorial of article1', () => {
         return expect(article1.getEditorial()).to.be.equal("Springer Nature");
     })
+    it('article1.getCitations() returns citations of article1', () => {
+        return expect(article1.getCitations()).to.be.equal(2);
+    })
 });
 
