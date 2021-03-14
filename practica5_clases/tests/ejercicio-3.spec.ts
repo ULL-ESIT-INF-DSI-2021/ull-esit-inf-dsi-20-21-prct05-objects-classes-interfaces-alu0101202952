@@ -38,4 +38,7 @@ describe('VehiclePublic', () => {
   it('titsa.getColor() returns color of titsa guagua', () => {
     return expect(titsa.getColor()).to.be.equal("verde");
   })
+  it('titsa.getTipo() returns tipo of titsa guagua', () => {
+    return expect(titsa.getTipo()).to.be.equal("guagua");
+  })
 });
