@@ -24,6 +24,9 @@ describe('BM (Bibliographic Manager)', () => {
     it('article1.getAuthor() returns authors of article1', () => {
         return expect(article1.getAuthor()).to.be.equal(undefined);
     })
+    it('article1.getEmailAuthor() returns email of authors of article1', () => {
+        return expect(article1.getEmailAuthor()).to.be.equal(undefined);
+    })
     it('article1.getCitations() returns citations of article1', () => {
         return expect(article1.getCitations()).to.be.equal(2);
     })
