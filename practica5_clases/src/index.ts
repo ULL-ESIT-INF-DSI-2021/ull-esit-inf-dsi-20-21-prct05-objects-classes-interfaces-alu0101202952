@@ -197,6 +197,7 @@ export class Pokedex{
 
  //********************************************************************************* */
  // EJERCICIO 2
+ /*
  export class BM{
   private title: String;
   private author = new Array();
@@ -261,26 +262,33 @@ export class Pokedex{
     getCitations(){
       return this.countCitations;
     }
-
     
     public referenceAPAWDOI() {
-      /**
-       * formato APA sin DOI:
-       * Apellido [coma] inicial (es) del nombre del autor [punto] año entre paréntesis [punto] título del articulo [punto] título de
-       * la Revista en cursivas [coma] volumen (número entre paréntesis) [coma] la referencia a las páginas [punto]. Recuperado DE 
-       * [insertar http: y el link]
-       */
-
       console.log(`Dahmani, I., Hifi, M., ${article1.getTitle}, Ann Oper Res 298, 125–147 (2021). https://doi.org/10.1007/s10479-019-03290-3`);
     }
+
+    // Mostrar por la consola la información incluida en la base de datos en formato tabla
+    public articleTable(title: String, author =new Array(), emailAuthor = new Array(), keywords = new Array(), abstract: String, publicationDate= new Array(3), editorial: String, countCitations: number){
+      this.title = title;
+      this.author = author;
+      this.emailAuthor = emailAuthor;
+      this.keywords = keywords;
+      this.abstract = abstract;
+      this.publicationDate = publicationDate;
+      this.editorial = editorial;
+      this.countCitations = countCitations;
+    }
+
   } //class BM ends
 
 
+  let article1 = new BM("A modified descent method-based heuristic for binary quadratic knapsack problems with conflict graphs", ["Isma Dahmani", "Mhand Hifi"], ["IsmaDahmani@gmail.com", "MhandHifi@gmail.com"], ["Descent", "Heuristic", "Knapsack", "Optimization"], "The knapsack problem arises in a variety of real world applications, including flexible manufacturing systems, railway stations, hydrological studies and others. In this paper, we propose a descent method-based heuristic for tackling a special knapsack problem: the binary quadratic knapsack with conflict graphs. The proposed method combines (i) an intensification search with a descent method for enhancing the accuracy of the solutions and (ii) a diversification strategy which is used for enlarging the search space. The method uses degrading and re-optimization strategies in order to reach a series of diversified solutions. The performance of the proposed method is evaluated on benchmark instances taken from the literature, where its achieved results are compared to those reached by both GLPK solver and the best method available in the literature. The method seems very competitive, where it is able to achieve 37 new lower bounds.", [17, 7, 2019], "Springer Nature" , 2);
 
-  let article1 = new BM("A modified descent method-based heuristic for binary quadratic knapsack problems with conflict graphs", ["Isma Dahmani", "Mhand Hifi"], ["IsmaDahmani@gmail.com", "MhandHifi@gmail.com"], ["Descent", "Heuristic", "Knapsack", "Optimization"], "The knapsack problem arises in a variety of real world applications, including flexible manufacturing systems, railway stations, hydrological studies and others. In this paper, we propose a descent method-based heuristic for tackling a special knapsack problem: the binary quadratic knapsack with conflict graphs. The proposed method combines (i) an intensification search with a descent method for enhancing the accuracy of the solutions and (ii) a diversification strategy which is used for enlarging the search space. The method uses degrading and re-optimization strategies in order to reach a series of diversified solutions. The performance of the proposed method is evaluated on benchmark instances taken from the literature, where its achieved results are compared to those reached by both GLPK solver and the best method available in the literature. The method seems very competitive, where it is able to achieve 37 new lower bounds.", [17, 7, 2019], "Springer Nature" , 2)
+  let article2 = new BM("On exact solution approaches for bilevel quadratic 0–1 knapsack problem", ["Gabriel Lopez Zenarosa", "Oleg A. Prokopyev", "Eduardo L. Pasiliao "], ["GabrielLopezZenarosa@gmail.com", "OlegAProkopyev@gmail.com", "EduardoLPasiliao@gmail.com"], ["Bilevel programming", "Bilevel knapsack problem","Quadratic knapsack problem", "Dynamic programming"], "We consider the bilevel quadratic knapsack problem (BQKP) that model settings where a leader appropriates a budget for a follower, who solves a quadratic 0–1 knapsack problem. BQKP generalizes the bilevel knapsack problem introduced by Dempe and Richter (Cent Eur J Oper Res 8(2):93–107, 2000), where the follower solves a linear 0–1 knapsack problem. We present an exact-solution approach for BQKP based on extensions of dynamic programs for QKP bounds and the branch-and-backtrack algorithm. We compare our approach against a two-phase method computed using an optimization solver in both phases: it first computes the follower’s value function for all feasible leader’s decisions, and then solves a single-level, value-function reformulation of BQKP as a mixed-integer quadratically constrained program. Our computational experiments show that our approach for solving BQKP outperforms the two-phase method computed by a commercial state-of-the-art optimization software package.",[4, 8, 2018], "Springer Nature" , 1);
 
 
-  let databaseArticles = [article1];
+  let databaseArticles = [article1, article2];
+
   console.log(`********************************************************************\n`);
   databaseArticles.forEach((article) => {
     console.log(`Title: "${article.getTitle()}"\n`);
@@ -292,4 +300,53 @@ export class Pokedex{
     console.log(`Editorial: ${article.getEditorial()}\n`);
     console.log(`Citations: ${article.getCitations()}\n`);
     console.log(`\nReference APA formar without DOI: ${article.referenceAPAWDOI()}\n`);
+
+    console.log(`********************************************************************\n`);
+    console.log(`${article.articleTable(article.getTitle(), [article.getAuthor()], [article.getEmailAuthor()], [article.getKeywords()], article.getAbstract(), [article.getPublicationDate()], article.getEditorial() , article.getCitations())}\n`);
+
+    console.table(article1);
+
+    console.log(`\n********************************************************************\n`);
+    
  });   
+ */
+
+
+
+ //********************************************************************************* */
+ //EJERCICIO 3
+export class Vehicles {
+  static modelo: string;
+  static antiguedad: number;
+  static color: string;
+  static marca: string;
+  constructor(marca: string, modelo: string, antiguedad: number, color: string){
+    Vehicles.marca = marca;
+    Vehicles.modelo = modelo;
+    Vehicles.antiguedad = antiguedad;
+    Vehicles.color = color;
+  }
+} //end class Vehicles
+
+export class VehiclesPrivate extends Vehicles {
+  constructor(marca: string, modelo: string, antiguedad: number, color: string, tipo:string){
+    super(marca, modelo,antiguedad,color);
+    Vehicles.marca = marca;
+    Vehicles.modelo = modelo;
+    Vehicles.antiguedad = antiguedad;
+    Vehicles.color = color;
+  }
+/*
+  getMarca(){
+    return Vehicles.marca;
+  }*/
+} //end class VehiclesPrivate
+
+export class VehiclesPublic extends Vehicles {
+  constructor(marca: string, modelo: string, antiguedad: number, color: string, tipo:string, capacidadPasajeros : number){
+    super(marca, modelo,antiguedad,color);
+  }
+}
+
+
+

@@ -1,20 +1,13 @@
-export declare class BM {
-    private title;
-    private author;
-    private emailAuthor;
-    private keywords;
-    private abstract;
-    private publicationDate;
-    private editorial;
-    private countCitations;
-    constructor(title: String, author: any[] | undefined, emailAuthor: any[] | undefined, keywords: any[] | undefined, abstract: String, publicationDate: any[] | undefined, editorial: String, countCitations: number);
-    getTitle(): String;
-    getAuthor(): void;
-    getEmailAuthor(): void;
-    getKeywords(): void;
-    getAbstract(): String;
-    getPublicationDate(): void;
-    getEditorial(): String;
-    getCitations(): number;
-    referenceAPAWDOI(): void;
+export declare class Vehicles {
+    private marca;
+    private modelo;
+    private antiguedad;
+    private color;
+    constructor(marca: string, modelo: string, antiguedad: number, color: string);
+}
+export declare class VehiclesPrivate extends Vehicles {
+    constructor(marca: string, modelo: string, antiguedad: number, color: string, tipo: string);
+}
+export declare class VehiclesPublic extends Vehicles {
+    constructor(marca: string, modelo: string, antiguedad: number, color: string, tipo: string, capacidadPasajeros: number);
 }
