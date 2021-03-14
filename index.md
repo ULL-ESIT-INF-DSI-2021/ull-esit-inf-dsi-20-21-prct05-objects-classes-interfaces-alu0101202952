@@ -29,8 +29,7 @@
   - Instalación, configuración Mocha y Chai
   - Pruebas Unitarias estructura
   - Ejercicio 1
-    - Prueba Unitaria
-    - Desarrollo del código
+    - Prueba Unitaria y Desarrollo del código
   - Ejercicio 2
     - Prueba Unitaria
     - Desarrollo del código
@@ -294,7 +293,7 @@ Además tiene como funciones, un constructor para definir las anteriores propied
 Como podemos ver el planteamiento que se tomó se comenzó luego por las pruebas unitarias.
 
 
-#### PRUEBAS UNITARIAS
+#### PRUEBAS UNITARIAS Y DESARROLLO DEL CÓDIGO
 
 Ya tenía el anterior esquema mental, entonces procedería a la metodología TDD, desarrollando la prueba unitaria correspondiente. 
 
@@ -308,11 +307,89 @@ Comencé comprobando así que la clase _Pokedex_ podía inicializar los valores 
 
 ![Expect fallo salida nombre Pokemon](https://i.imgur.com/3UbqKQC.jpg)
 
-3. 
+3. Guardé el fallo:
+
+> `git add .`
+
+> `git commit -m "Fallo test de sacar el nombre del pokemon de la clase Pokedex"`
+
+> `git push --all`
+
+
+4. Después de definir el objeto en su constructor y crear el getter correspondiente (`getName()`):
+
+![GetName()](https://i.imgur.com/mK9WIXA.jpg)
+
+5. Ejecuté `npm run test` y me salió correcta las expectativas:
+
+![Expect acierto salida nombre Pokemon](https://i.imgur.com/pzMGhBT.jpg)
+
+6. Guardé el acierto:
+
+
+> `git add .`
+
+> `git commit -m "Acierto test de sacar el nombre del pokemon de la clase Pokedex"`
+
+> `git push --all`
+
+
+Así hice lo mismo con las demás expectativas sobre los getters de la clase _Pokedex_, quedando finalmente las expectativas como:
+
+![Expects class Pokedex](https://i.imgur.com/hoU9isb.jpg)
+
+Y comprobándose cada una de ellas:
+
+![Comprobación expectativas](https://i.imgur.com/Dn8Cvwf.jpg)
+
+
+Una vez que hice las expectativas iba realizando las funciones de la clase hasta quedarme estructurada como:
+
+![Class Pokedex](https://i.imgur.com/Svl8Bhr.jpg)
+
+
+Ahora pasaríamos a la clase _Combat_. Tras crear la clase, comprobaríamos, siguiendo el mismo procedimiento que antes si la funcion **combat()** imprime el daño que causaría cada Pokemon y si la función **start()** imprime el combate en sí y cómo disminuye su vida con el daño que se realizan.
+
+Primero hice la expectativa de combat, falló, hice le código y luego funcionó y lo mismo con start, quedando ambas expectativas como:
+
+![definicion de variable expect](https://i.imgur.com/z5WkFyL.jpg)
+
+
+![Expects clas Combat](https://i.imgur.com/GCc6RIn.jpg)
+
+
+Así se comprobó que funcionaba:
+
+![Comprobacion](https://i.imgur.com/2I0yf28.jpg)
+
+Y el código resultante que da acierto, y pasaré a explicar es:
+
+**FUNCIÓN COMBAT()**
+
+![Funcion combat](https://i.imgur.com/AoiifO1.jpg)
+
+Como se puede ver de esta función es una modificación de mi ejercicio 9 de la práctica 3, que devuelve el daño que hace cada pokemon:
+
+![daño](https://i.imgur.com/2tY4gxT.jpg)
+
+De la cual empleo el método round() de la clase **Math {}** para redondear el valor del daño.
+
+
+**FUNCIÓN START()**
+
+eeeee
+
+
+
+
+
+Concluyendo así el programa y mostrando un auténtico combate Pokemon!!
+
+
+![Ejecución programa]()
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━✧❂✧━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
 
 
 
