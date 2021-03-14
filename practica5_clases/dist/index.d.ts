@@ -10,8 +10,6 @@ export declare class Pokedex {
     getWeight(): number;
     getHeight(): number;
     getType(): string;
-    getStats(): (attack: number[], defense: number[], speed: number[], hp: number[]) => number[];
-    getAttack(): number[] | undefined;
 }
 export declare class Combat {
     type1: string;

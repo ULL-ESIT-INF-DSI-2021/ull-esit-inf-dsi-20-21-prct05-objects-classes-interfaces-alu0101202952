@@ -30,41 +30,32 @@ export class Pokedex{
         return this.type;
       }
 
+      /*
       getStats(){
         return this.stats;
-      }
+      }*/
 
+      /*
       getAttack(){
         var attack;
         for(var i = 0; i < this.stats.length;i++){
           attack = this.stats([0],[1],[2],[3]) ;
         }
         return attack;
-      }
+      }*/
 
   } //class pokedex ends
   
   
   export class Combat{
-    public type1!: string;
-    public type2!: string;
-    //public dañoPoke1: number;
-    //public dañoPoke2:number;
-    //public opponents:(namePokemon1: string, namePokemon2:string) => any;
+    public type1: string;
+    public type2: string;
   
-    constructor(type1:string, type2:string, /*dañoPoke1: number, dañoPoke2: number*/) {
+    constructor(type1:string, type2:string) {
       this.type1 = type1;
       this.type2 = type2;
-      //this.dañoPoke1 = dañoPoke1;
-      //this.dañoPoke2 = dañoPoke2;
+
     }
-/*
-    getDaño1(){
-      return this.dañoPoke1;
-    }
-    getDaño2(){
-      return this.dañoPoke2;
-    }*/
     
     public combat(type1: string, type2: string) {
       var type1 = pok1.getType();
@@ -161,7 +152,7 @@ export class Pokedex{
 
       console.log(`Daño que causa tu equipo Pokemon: ${dañoPoke1}`);
       console.log(`Daño que realiza el equipo rival: ${dañoPoke2}`);
-      //this.start(type1, type2, 75, 95, dañoPoke1, dañoPoke2);
+      
       
     }
 

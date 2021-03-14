@@ -21,36 +21,14 @@ var Pokedex = /** @class */ (function () {
     Pokedex.prototype.getType = function () {
         return this.type;
     };
-    Pokedex.prototype.getStats = function () {
-        return this.stats;
-    };
-    Pokedex.prototype.getAttack = function () {
-        var attack;
-        for (var i = 0; i < this.stats.length; i++) {
-            attack = this.stats([0], [1], [2], [3]);
-        }
-        return attack;
-    };
     return Pokedex;
 }()); //class pokedex ends
 exports.Pokedex = Pokedex;
 var Combat = /** @class */ (function () {
-    //public dañoPoke1: number;
-    //public dañoPoke2:number;
-    //public opponents:(namePokemon1: string, namePokemon2:string) => any;
     function Combat(type1, type2) {
         this.type1 = type1;
         this.type2 = type2;
-        //this.dañoPoke1 = dañoPoke1;
-        //this.dañoPoke2 = dañoPoke2;
     }
-    /*
-        getDaño1(){
-          return this.dañoPoke1;
-        }
-        getDaño2(){
-          return this.dañoPoke2;
-        }*/
     Combat.prototype.combat = function (type1, type2) {
         var type1 = pok1.getType();
         var type2 = pok2.getType();
@@ -146,7 +124,6 @@ var Combat = /** @class */ (function () {
         dañoPoke2 = Math.round(dañoPoke2);
         console.log("Da\u00F1o que causa tu equipo Pokemon: " + dañoPoke1);
         console.log("Da\u00F1o que realiza el equipo rival: " + dañoPoke2);
-        //this.start(type1, type2, 75, 95, dañoPoke1, dañoPoke2);
     };
     Combat.prototype.start = function (type1, type2, hp1, hp2 /*, dañoPoke1:number, dañoPoke2:number*/) {
         var i;
