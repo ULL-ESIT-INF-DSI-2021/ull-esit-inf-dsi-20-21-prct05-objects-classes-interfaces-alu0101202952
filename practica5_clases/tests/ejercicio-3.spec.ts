@@ -41,4 +41,7 @@ describe('VehiclePublic', () => {
   it('titsa.getTipo() returns tipo of titsa guagua', () => {
     return expect(titsa.getTipo()).to.be.equal("guagua");
   })
+  it('titsa.getCapacidad() returns capacidad de pasajeros of titsa guagua', () => {
+    return expect(titsa.getCapacidad()).to.be.equal(55);
+  })
 });
