@@ -4,8 +4,7 @@ import {Vehicles} from '../src/index';
 import {VehiclesPrivate} from '../src/index';
 import {VehiclesPublic} from '../src/index';
 
-let vehicle1 = new VehiclesPrivate("Seat", "Ibiza", 5, "azul", "turismo");
-let titsa = new VehiclesPublic("Scania", "K380", 8, "verde", "guagua", 55);
+let vehicle1 = new VehiclesPrivate("Seat", "Ibiza", 5, "azul", "turismo", 4, "motor gasolina", 45);
 
 describe('VehiclePrivate', () => {
   it('vehicle1.getMarca() returns marca of vehicle1', () => {
@@ -23,7 +22,14 @@ describe('VehiclePrivate', () => {
   it('vehicle1.getTipo() returns tipo of vehicle1', () => {
     return expect(vehicle1.getTipo()).to.be.equal("turismo");
   })
+  it('vehicle1.getNumRuedas() returns numero de ruedas of vehicle1', () => {
+    return expect(vehicle1.getNumRuedas()).to.be.equal(4);
+  })
+
 });
+
+
+let titsa = new VehiclesPublic("Scania", "K380", 8, "verde", "guagua", 55);
 
 describe('VehiclePublic', () => {
   it('titsa.getMarca() returns marca of titsa guagua', () => {

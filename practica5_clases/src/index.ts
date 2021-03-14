@@ -328,33 +328,34 @@ export class Vehicles {
   }
 } //end class Vehicles
 
-export class VehiclesPrivate extends Vehicles {
+export interface Movable{
+  numRuedas: number;
+  motor: string;
+  cv: number;
+}
+
+export class VehiclesPrivate extends Vehicles implements Movable {
   static tipo: string;
-  constructor(marca: string, modelo: string, antiguedad: number, color: string, tipo:string){
+  constructor(marca: string, modelo: string, antiguedad: number, color: string, tipo:string, public readonly numRuedas: number, public readonly motor: string, public readonly cv: number){
     super(marca, modelo,antiguedad,color);
-    Vehicles.marca = marca;
-    Vehicles.modelo = modelo;
-    Vehicles.antiguedad = antiguedad;
-    Vehicles.color = color;
+    VehiclesPrivate.marca = marca;
+    VehiclesPrivate.modelo = modelo;
+    VehiclesPrivate.antiguedad = antiguedad;
+    VehiclesPrivate.color = color;
     VehiclesPrivate.tipo = tipo;
   }
-
   getMarca(){
-    return Vehicles.marca;
+    return VehiclesPrivate.marca;
   }
-
   getModelo(){
-    return Vehicles.modelo;
+    return VehiclesPrivate.modelo;
   }
-
   getAntiguedad(){
-    return Vehicles.antiguedad;
+    return VehiclesPrivate.antiguedad;
   }
-
   getColor(){
-    return Vehicles.color;
+    return VehiclesPrivate.color;
   }
-
   getTipo(){
     return VehiclesPrivate.tipo;
   }
@@ -365,46 +366,59 @@ export class VehiclesPublic extends Vehicles {
   static capacidadPasajeros : number;
   constructor(marca: string, modelo: string, antiguedad: number, color: string, tipo:string, capacidadPasajeros : number){
     super(marca, modelo,antiguedad,color);
-    Vehicles.marca = marca;
-    Vehicles.modelo = modelo;
-    Vehicles.antiguedad = antiguedad;
-    Vehicles.color = color;
+    VehiclesPublic.marca = marca;
+    VehiclesPublic.modelo = modelo;
+    VehiclesPublic.antiguedad = antiguedad;
+    VehiclesPublic.color = color;
     VehiclesPublic.tipo = tipo;
     VehiclesPublic.capacidadPasajeros = capacidadPasajeros;
   }
   getMarca(){
-    return Vehicles.marca;
+    return VehiclesPublic.marca;
   }
-  
   getModelo(){
-    return Vehicles.modelo;
+    return VehiclesPublic.modelo;
   }
   getAntiguedad(){
-    return Vehicles.antiguedad;
+    return VehiclesPublic.antiguedad;
   }
   getColor(){
-    return Vehicles.color;
+    return VehiclesPublic.color;
   }
   getTipo(){
     return VehiclesPublic.tipo;
-  }/*
+  }
   getCapacidad(){
     return VehiclesPublic.capacidadPasajeros;
-  }*/
+  }
 }
 
 
-let vehicle1 = new VehiclesPrivate("Seat", "Ibiza", 5, "azul", "turismo");
+
+
+
+
+
+
+let vehicle1 = new VehiclesPrivate("Seat", "Ibiza", 5, "azul", "turismo", 4, "motor gasolina", 45);
 let titsa = new VehiclesPublic("Scania", "K380", 8, "verde", "guagua", 55);
 let databaseVehiclesPrivate = [vehicle1];
 let databaseVehiclesPublic = [titsa];
 
+console.log(`***********************************************************************************`);
+console.log(`VEHÍCULOS PRIVADOS`);
+console.log(`***********************************************************************************`);
+
 databaseVehiclesPrivate.forEach((vehiclepr) => {
-  console.log(`El vehículo privado es un ${vehiclepr.getMarca()} ${vehiclepr.getModelo()} con ${vehiclepr.getAntiguedad()} años, color ${vehiclepr.getColor() }, clase ${vehiclepr.getTipo()}`);
+  console.log(`+ El vehículo privado es un ${vehiclepr.getMarca()} ${vehiclepr.getModelo()} con ${vehiclepr.getAntiguedad()} años, color ${vehiclepr.getColor() }, clase ${vehiclepr.getTipo()}`);
 });
 
+console.log(`\n\n***********************************************************************************`);
+console.log(`VEHÍCULOS PÚBLICOS`);
+console.log(`***********************************************************************************`);
+
 databaseVehiclesPublic.forEach((vehiclepu) => {
-  console.log(`El vehículo público es un ${vehiclepu.getMarca()} ${vehiclepu.getModelo()} con ${vehiclepu.getAntiguedad()} años, color ${vehiclepu.getColor()},  clase ${vehiclepu.getTipo()}`);
+  console.log(`+ El vehículo público es un ${vehiclepu.getMarca()} ${vehiclepu.getModelo()} con ${vehiclepu.getAntiguedad()} años, color ${vehiclepu.getColor()}, clase ${vehiclepu.getTipo()}, con capacidad de ${vehiclepu.getCapacidad()} pasajeros`);
 });
-//
+
 

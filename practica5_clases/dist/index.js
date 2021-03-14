@@ -340,25 +340,32 @@ var Vehicles = /** @class */ (function () {
 exports.Vehicles = Vehicles;
 var VehiclesPrivate = /** @class */ (function (_super) {
     __extends(VehiclesPrivate, _super);
-    function VehiclesPrivate(marca, modelo, antiguedad, color, tipo) {
+    function VehiclesPrivate(marca, modelo, antiguedad, color, tipo, numRuedas, motor, cv) {
         var _this = _super.call(this, marca, modelo, antiguedad, color) || this;
-        Vehicles.marca = marca;
-        Vehicles.modelo = modelo;
-        Vehicles.antiguedad = antiguedad;
-        Vehicles.color = color;
+        _this.numRuedas = numRuedas;
+        _this.motor = motor;
+        _this.cv = cv;
+        VehiclesPrivate.marca = marca;
+        VehiclesPrivate.modelo = modelo;
+        VehiclesPrivate.antiguedad = antiguedad;
+        VehiclesPrivate.color = color;
+        VehiclesPrivate.tipo = tipo;
         return _this;
     }
     VehiclesPrivate.prototype.getMarca = function () {
-        return Vehicles.marca;
+        return VehiclesPrivate.marca;
     };
     VehiclesPrivate.prototype.getModelo = function () {
-        return Vehicles.modelo;
+        return VehiclesPrivate.modelo;
     };
     VehiclesPrivate.prototype.getAntiguedad = function () {
-        return Vehicles.antiguedad;
+        return VehiclesPrivate.antiguedad;
     };
     VehiclesPrivate.prototype.getColor = function () {
-        return Vehicles.color;
+        return VehiclesPrivate.color;
+    };
+    VehiclesPrivate.prototype.getTipo = function () {
+        return VehiclesPrivate.tipo;
     };
     return VehiclesPrivate;
 }(Vehicles)); //end class VehiclesPrivate
@@ -366,13 +373,49 @@ exports.VehiclesPrivate = VehiclesPrivate;
 var VehiclesPublic = /** @class */ (function (_super) {
     __extends(VehiclesPublic, _super);
     function VehiclesPublic(marca, modelo, antiguedad, color, tipo, capacidadPasajeros) {
-        return _super.call(this, marca, modelo, antiguedad, color) || this;
+        var _this = _super.call(this, marca, modelo, antiguedad, color) || this;
+        VehiclesPublic.marca = marca;
+        VehiclesPublic.modelo = modelo;
+        VehiclesPublic.antiguedad = antiguedad;
+        VehiclesPublic.color = color;
+        VehiclesPublic.tipo = tipo;
+        VehiclesPublic.capacidadPasajeros = capacidadPasajeros;
+        return _this;
     }
+    VehiclesPublic.prototype.getMarca = function () {
+        return VehiclesPublic.marca;
+    };
+    VehiclesPublic.prototype.getModelo = function () {
+        return VehiclesPublic.modelo;
+    };
+    VehiclesPublic.prototype.getAntiguedad = function () {
+        return VehiclesPublic.antiguedad;
+    };
+    VehiclesPublic.prototype.getColor = function () {
+        return VehiclesPublic.color;
+    };
+    VehiclesPublic.prototype.getTipo = function () {
+        return VehiclesPublic.tipo;
+    };
+    VehiclesPublic.prototype.getCapacidad = function () {
+        return VehiclesPublic.capacidadPasajeros;
+    };
     return VehiclesPublic;
 }(Vehicles));
 exports.VehiclesPublic = VehiclesPublic;
-var vehicle1 = new VehiclesPrivate("Seat", "Ibiza", 5, "azul", "turismo");
-var databaseVehicles = [vehicle1];
-databaseVehicles.forEach(function (vehicle) {
-    console.log("Mi coche es un " + vehicle.getMarca + " " + vehicle.getModelo + " con " + vehicle.getAntiguedad + " a\u00F1os, color " + vehicle.getColor);
+var vehicle1 = new VehiclesPrivate("Seat", "Ibiza", 5, "azul", "turismo", 4, "motor gasolina", 45);
+var titsa = new VehiclesPublic("Scania", "K380", 8, "verde", "guagua", 55);
+var databaseVehiclesPrivate = [vehicle1];
+var databaseVehiclesPublic = [titsa];
+console.log("***********************************************************************************");
+console.log("VEH\u00CDCULOS PRIVADOS");
+console.log("***********************************************************************************");
+databaseVehiclesPrivate.forEach(function (vehiclepr) {
+    console.log("+ El veh\u00EDculo privado es un " + vehiclepr.getMarca() + " " + vehiclepr.getModelo() + " con " + vehiclepr.getAntiguedad() + " a\u00F1os, color " + vehiclepr.getColor() + ", clase " + vehiclepr.getTipo());
+});
+console.log("\n\n***********************************************************************************");
+console.log("VEH\u00CDCULOS P\u00DABLICOS");
+console.log("***********************************************************************************");
+databaseVehiclesPublic.forEach(function (vehiclepu) {
+    console.log("+ El veh\u00EDculo p\u00FAblico es un " + vehiclepu.getMarca() + " " + vehiclepu.getModelo() + " con " + vehiclepu.getAntiguedad() + " a\u00F1os, color " + vehiclepu.getColor() + ", clase " + vehiclepu.getTipo() + ", con capacidad de " + vehiclepu.getCapacidad() + " pasajeros");
 });
