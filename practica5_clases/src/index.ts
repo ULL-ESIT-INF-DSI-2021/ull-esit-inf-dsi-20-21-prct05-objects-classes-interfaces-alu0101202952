@@ -348,6 +348,10 @@ export class VehiclesPrivate extends Vehicles {
   getAntiguedad(){
     return Vehicles.antiguedad;
   }
+/*
+  getColor(){
+    return Vehicles.color;
+  }*/
 } //end class VehiclesPrivate
 
 export class VehiclesPublic extends Vehicles {

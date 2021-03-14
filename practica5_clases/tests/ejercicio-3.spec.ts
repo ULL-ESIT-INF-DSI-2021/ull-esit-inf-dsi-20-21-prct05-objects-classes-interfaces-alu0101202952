@@ -18,4 +18,8 @@ describe('VehiclePrivate', () => {
   it('vehicle1.getAntigüdad() returns antigüedad of vehicle1', () => {
     return expect(vehicle1.getAntiguedad()).to.be.equal(5);
   })
+
+  it('vehicle1.getColor() returns color of vehicle1', () => {
+    return expect(vehicle1.getColor()).to.be.equal("azul");
+  })
 });
