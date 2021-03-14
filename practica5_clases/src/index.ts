@@ -221,13 +221,13 @@ export class Pokedex{
     getTitle(){
       return this.title;
     }
-/*
+
     getAuthor(){
       var aux: string = '';
       for (var i = 0; i < this.author.length; i++) {
         aux += this.author[i] + ', ';
       } console.log(`Authors: ${aux}`);
-    }*/
+    }
 
     getAbstract(){
       return this.abstract;
@@ -241,6 +241,7 @@ export class Pokedex{
       return this.countCitations;
     }
 
+    /*
     public referenceAPAWDOI() {
       /**
        * formato APA sin DOI:
@@ -248,9 +249,9 @@ export class Pokedex{
        * la Revista en cursivas [coma] volumen (número entre paréntesis) [coma] la referencia a las páginas [punto]. Recuperado DE 
        * [insertar http: y el link]
        */
-
+/*
       console.log(`Dahmani, I., Hifi, M., ${article1.getTitle}, Ann Oper Res 298, 125–147 (2021). https://doi.org/10.1007/s10479-019-03290-3`);
-    }
+    }*/
   } //class BM ends
 
 
@@ -264,7 +265,7 @@ export class Pokedex{
     console.log(`Title: "${article.getTitle()}"\n`);
     console.log(`Abstract: ${article.getAbstract()}\n`);
     console.log(`Editorial: ${article.getEditorial()}\n`);
-    //console.log(`${article.getAuthor()}\n`);
+    console.log(`${article.getAuthor()}\n`);
     console.log(`Citations: ${article.getCitations()}\n`);
-    console.log(`\nReference APA formar without DOI: ${article.referenceAPAWDOI()}\n`);
+    //console.log(`\nReference APA formar without DOI: ${article.referenceAPAWDOI()}\n`);
  });   
