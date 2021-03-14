@@ -410,7 +410,7 @@ console.log(`VEHÍCULOS PRIVADOS`);
 console.log(`***********************************************************************************`);
 
 databaseVehiclesPrivate.forEach((vehiclepr) => {
-  console.log(`+ El vehículo privado es un ${vehiclepr.getMarca()} ${vehiclepr.getModelo()} con ${vehiclepr.getAntiguedad()} años, color ${vehiclepr.getColor() }, clase ${vehiclepr.getTipo()}`);
+  console.log(`+ El vehículo privado es un ${vehiclepr.getMarca()} ${vehiclepr.getModelo()} con ${vehiclepr.getAntiguedad()} años, color ${vehiclepr.getColor() }, clase ${vehiclepr.getTipo()}, con ${vehiclepr.getNumRuedas()}`);
 });
 
 console.log(`\n\n***********************************************************************************`);
