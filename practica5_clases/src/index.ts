@@ -376,10 +376,13 @@ export class VehiclesPrivate extends Vehicles implements Movable {
   }
 } //end class VehiclesPrivate
 
-export class VehiclesPublic extends Vehicles {
+export class VehiclesPublic extends Vehicles implements Movable {
   static tipo: string;
   static capacidadPasajeros : number;
-  constructor(marca: string, modelo: string, antiguedad: number, color: string, tipo:string, capacidadPasajeros : number){
+  static numRuedas: number;
+  static motor: string;
+  static cv: number;
+  constructor(marca: string, modelo: string, antiguedad: number, color: string, tipo:string, capacidadPasajeros : number, public readonly numRuedas: number, public readonly motor: string, public readonly cv: number){
     super(marca, modelo,antiguedad,color);
     VehiclesPublic.marca = marca;
     VehiclesPublic.modelo = modelo;
@@ -387,6 +390,9 @@ export class VehiclesPublic extends Vehicles {
     VehiclesPublic.color = color;
     VehiclesPublic.tipo = tipo;
     VehiclesPublic.capacidadPasajeros = capacidadPasajeros;
+    VehiclesPublic.numRuedas = numRuedas;
+    VehiclesPublic.motor = motor;
+    VehiclesPublic.cv = cv;
   }
   getMarca(){
     return VehiclesPublic.marca;
@@ -416,7 +422,7 @@ export class VehiclesPublic extends Vehicles {
 
 
 let vehicle1 = new VehiclesPrivate("Seat", "Ibiza", 5, "azul", "turismo", 4, "motor gasolina", 45);
-let titsa = new VehiclesPublic("Scania", "K380", 8, "verde", "guagua", 55);
+let titsa = new VehiclesPublic("Scania", "K380", 8, "verde", "guagua", 55, 4, "motor diesel", 115);
 let databaseVehiclesPrivate = [vehicle1];
 let databaseVehiclesPublic = [titsa];
 

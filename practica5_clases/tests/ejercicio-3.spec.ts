@@ -34,7 +34,7 @@ describe('VehiclePrivate', () => {
 });
 
 
-let titsa = new VehiclesPublic("Scania", "K380", 8, "verde", "guagua", 55);
+let titsa = new VehiclesPublic("Scania", "K380", 8, "verde", "guagua", 55, 4, "motor diesel", 115);
 
 describe('VehiclePublic', () => {
   it('titsa.getMarca() returns marca of titsa guagua', () => {
@@ -54,5 +54,8 @@ describe('VehiclePublic', () => {
   })
   it('titsa.getCapacidad() returns capacidad de pasajeros of titsa guagua', () => {
     return expect(titsa.getCapacidad()).to.be.equal(55);
+  })
+  it('titsa.getNumRuedas() returns numero de ruedas of titsa', () => {
+    return expect(titsa.getNumRuedas()).to.be.equal(4);
   })
 });
