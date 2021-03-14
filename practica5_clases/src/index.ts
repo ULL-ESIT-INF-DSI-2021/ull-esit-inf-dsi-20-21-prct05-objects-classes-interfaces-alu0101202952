@@ -437,22 +437,21 @@ export class Street extends Vehicles{
     Street.velocidad=velocidad;
     Street.cantidadCoche = cantidadCoche;
   }
-
-  
+  getVelocidad(){
+    return Street.velocidad;
+  }
   
 }
 
 
 
-
-
-
-
-
 let vehicle1 = new VehiclesPrivate("Seat", "Ibiza", 5, "azul", "turismo", 4, "motor gasolina", 45);
 let titsa = new VehiclesPublic("Scania", "K380", 8, "verde", "guagua", 55, 4, "motor diesel", 115);
+let coche1 = new Street("Benito Pérez Armas", "Santa Cruz de Tenerife", "Mazda", "CX5", 7, "rojo", "todoterreno", 2, 45);
+
 let databaseVehiclesPrivate = [vehicle1];
 let databaseVehiclesPublic = [titsa];
+let databaseVehiclesStreet = [coche1];
 
 console.log(`***********************************************************************************`);
 console.log(`VEHÍCULOS PRIVADOS`);
@@ -470,4 +469,11 @@ databaseVehiclesPublic.forEach((vehiclepu) => {
   console.log(`+ El vehículo público es un ${vehiclepu.getMarca()} ${vehiclepu.getModelo()} con ${vehiclepu.getAntiguedad()} años, color ${vehiclepu.getColor()}, clase ${vehiclepu.getTipo()}, con capacidad de ${vehiclepu.getCapacidad()} pasajeros, con ${vehiclepu.getNumRuedas()}, tipo ${vehiclepu.getMotor()} con una potencia en caballos de vapor de ${vehiclepu.getCV()}`);
 });
 
+console.log(`\n\n***********************************************************************************`);
+console.log(`VEHÍCULOS CIRCULAN POR CALLE`);
+console.log(`***********************************************************************************`);
+
+databaseVehiclesStreet.forEach((vehiclestr) => {
+  console.log(`+ El vehículo ${coche1} circula a ${vehiclestr.getVelocidad()} KM/h`);
+});
 
