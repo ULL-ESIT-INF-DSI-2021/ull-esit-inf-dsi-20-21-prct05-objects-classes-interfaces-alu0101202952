@@ -234,6 +234,13 @@ var BM = /** @class */ (function () {
         }
         console.log("Contact (email): " + aux);
     };
+    BM.prototype.getKeywords = function () {
+        var aux = '';
+        for (var i = 0; i < this.keywords.length; i++) {
+            aux += this.keywords[i] + ', ';
+        }
+        console.log("Keywords: " + aux);
+    };
     BM.prototype.getAbstract = function () {
         return this.abstract;
     };
@@ -253,6 +260,7 @@ databaseArticles.forEach(function (article) {
     console.log("Title: \"" + article.getTitle() + "\"\n");
     console.log(article.getAuthor() + "\n");
     console.log(article.getEmailAuthor() + "\n");
+    console.log(article.getKeywords() + "\n");
     console.log("Abstract: " + article.getAbstract() + "\n");
     console.log("Editorial: " + article.getEditorial() + "\n");
     console.log("Citations: " + article.getCitations() + "\n");

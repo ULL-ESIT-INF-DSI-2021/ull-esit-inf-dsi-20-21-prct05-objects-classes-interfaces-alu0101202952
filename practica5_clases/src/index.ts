@@ -236,6 +236,13 @@ export class Pokedex{
       } console.log(`Contact (email): ${aux}`);
     }
 
+    getKeywords(){
+      var aux: string = '';
+      for (var i = 0; i < this.keywords.length; i++) {
+        aux += this.keywords[i] + ', ';
+      } console.log(`Keywords: ${aux}`);
+    }
+
     getAbstract(){
       return this.abstract;
     }
@@ -272,6 +279,7 @@ export class Pokedex{
     console.log(`Title: "${article.getTitle()}"\n`);
     console.log(`${article.getAuthor()}\n`);
     console.log(`${article.getEmailAuthor()}\n`);
+    console.log(`${article.getKeywords()}\n`);
     console.log(`Abstract: ${article.getAbstract()}\n`);
     console.log(`Editorial: ${article.getEditorial()}\n`);
     

@@ -11,6 +11,7 @@ export declare class BM {
     getTitle(): String;
     getAuthor(): void;
     getEmailAuthor(): void;
+    getKeywords(): void;
     getAbstract(): String;
     getEditorial(): String;
     getCitations(): number;
