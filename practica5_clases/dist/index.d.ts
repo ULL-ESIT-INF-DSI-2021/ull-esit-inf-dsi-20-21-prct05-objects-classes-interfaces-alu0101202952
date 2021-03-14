@@ -11,8 +11,9 @@ export declare class Pokedex {
     getType(): string;
 }
 export declare class Combat {
-    namePokemon1: string;
-    namePokemon2: string;
-    constructor(namePokemon1: string, namePokemon2: string);
-    combat(namePokemon1: string, namePokemon2: string): void;
+    type1: string;
+    type2: string;
+    constructor(type1: string, type2: string);
+    combat(type1: string, type2: string): void;
+    start(type1: string, type2: string, hp1: number, hp2: number): void;
 }
