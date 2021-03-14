@@ -22,4 +22,8 @@ describe('VehiclePrivate', () => {
   it('vehicle1.getColor() returns color of vehicle1', () => {
     return expect(vehicle1.getColor()).to.be.equal("azul");
   })
+
+  it('vehicle1.getTipo() returns tipo of vehicle1', () => {
+    return expect(vehicle1.getTipo()).to.be.equal("turismo");
+  })
 });
