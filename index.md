@@ -31,11 +31,9 @@
   - Ejercicio 1
     - Prueba Unitaria y Desarrollo del código
   - Ejercicio 2
-    - Prueba Unitaria
-    - Desarrollo del código
+    - Prueba Unitaria y Desarrollo del código
   - Ejercicio 3
-    - Prueba Unitaria
-    - Desarrollo del código
+    - Prueba Unitaria y Desarrollo del código
   - Desarrollo del informe con GitHub Pages
   - Conclusiones
   - Bibliografía y/o Webgrafía
@@ -393,7 +391,11 @@ Concluyendo así el programa y mostrando un auténtico combate Pokemon!!
 
 
 
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+
 ### EJERCICIO 2
+
+
 
 
 
