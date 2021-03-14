@@ -378,10 +378,10 @@ export class VehiclesPublic extends Vehicles {
   
   getModelo(){
     return Vehicles.modelo;
-  }/*
+  }
   getAntiguedad(){
     return Vehicles.antiguedad;
-  }
+  }/*
   getColor(){
     return Vehicles.color;
   }
@@ -404,7 +404,7 @@ databaseVehiclesPrivate.forEach((vehicle) => {
 });
 
 databaseVehiclesPublic.forEach((vehicle) => {
-  console.log(`El vehículo público es un ${vehicle.getMarca()} ${vehicle.getModelo()}`);
+  console.log(`El vehículo público es un ${vehicle.getMarca()} ${vehicle.getModelo()} con ${vehicle.getAntiguedad()} años,`);
 });
-// con ${vehicle.getAntiguedad()} años, color ${vehicle.getColor() }, clase ${vehicle.getTipo()}
+// color ${vehicle.getColor() }, clase ${vehicle.getTipo()}
 
