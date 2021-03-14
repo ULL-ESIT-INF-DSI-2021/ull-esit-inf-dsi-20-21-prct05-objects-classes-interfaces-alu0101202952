@@ -16,4 +16,5 @@ export declare class BM {
     getPublicationDate(): void;
     getEditorial(): String;
     getCitations(): number;
+    referenceAPAWDOI(): void;
 }
