@@ -6,7 +6,6 @@ export declare class Pokedex {
     stats: (attack: number[], defense: number[], speed: number[], hp: number[]) => number[];
     static pokemon: any;
     constructor(name: string, weight: number, height: number, type: string, stats: (attack: number[], defense: number[], speed: number[], hp: number[]) => number[]);
-    getName(): string;
     getWeight(): number;
     getHeight(): number;
     getType(): string;

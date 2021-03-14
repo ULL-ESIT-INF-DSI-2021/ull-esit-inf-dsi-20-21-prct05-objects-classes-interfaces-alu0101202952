@@ -9,9 +9,11 @@ var Pokedex = /** @class */ (function () {
         this.type = type;
         this.stats = stats;
     }
-    Pokedex.prototype.getName = function () {
-        return this.name;
-    };
+    /*
+        getName(){
+          return this.name;
+        }
+    */
     Pokedex.prototype.getWeight = function () {
         return this.weight;
     };
