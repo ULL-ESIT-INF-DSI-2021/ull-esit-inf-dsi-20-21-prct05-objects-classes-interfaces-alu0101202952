@@ -61,4 +61,7 @@ describe('VehiclePublic', () => {
   it('titsa.getMotor() returns tipo de motor of titsa', () => {
     return expect(titsa.getMotor()).to.be.equal("motor diesel");
   })
+  it('titsa.getCV() returns caballaje of titsa', () => {
+    return expect(titsa.getCV()).to.be.equal(115);
+  })
 });
