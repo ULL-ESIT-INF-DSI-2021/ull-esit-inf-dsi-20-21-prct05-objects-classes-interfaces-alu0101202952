@@ -25,6 +25,10 @@ describe('VehiclePrivate', () => {
   it('vehicle1.getNumRuedas() returns numero de ruedas of vehicle1', () => {
     return expect(vehicle1.getNumRuedas()).to.be.equal(4);
   })
+  it('vehicle1.getMotor() returns tipo de motor of vehicle1', () => {
+    return expect(vehicle1.getMotor()).to.be.equal("motor gasolina");
+  })
+
 
 });
 
