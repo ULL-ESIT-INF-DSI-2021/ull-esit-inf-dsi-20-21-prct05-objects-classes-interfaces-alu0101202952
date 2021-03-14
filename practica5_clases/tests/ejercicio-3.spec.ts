@@ -3,6 +3,7 @@ import {expect} from 'chai';
 import {Vehicles} from '../src/index';
 import {VehiclesPrivate} from '../src/index';
 import {VehiclesPublic} from '../src/index';
+import {Street} from '../src/index';
 
 let vehicle1 = new VehiclesPrivate("Seat", "Ibiza", 5, "azul", "turismo", 4, "motor gasolina", 45);
 
@@ -63,5 +64,13 @@ describe('VehiclePublic', () => {
   })
   it('titsa.getCV() returns caballaje of titsa', () => {
     return expect(titsa.getCV()).to.be.equal(115);
+  })
+});
+
+
+let coche1 = new Street("Benito Pérez Armas", "Santa Cruz de Tenerife", "Mazda", "CX5", 7, "rojo", "todoterreno", 2, 45);
+describe('Street', () => {
+  it('coche.getVelocidad() returns velocidad of coche1', () => {
+    return expect(coche1.getVelocidad()).to.be.equal(45);
   })
 });

@@ -320,11 +320,13 @@ export class Vehicles {
   static antiguedad: number;
   static color: string;
   static marca: string;
-  constructor(marca: string, modelo: string, antiguedad: number, color: string){
+  static tipo: string;
+  constructor(marca: string, modelo: string, antiguedad: number, color: string, tipo:string){
     Vehicles.marca = marca;
     Vehicles.modelo = modelo;
     Vehicles.antiguedad = antiguedad;
     Vehicles.color = color;
+    Vehicles.tipo = tipo;
   }
 } //end class Vehicles
 
@@ -340,7 +342,7 @@ export class VehiclesPrivate extends Vehicles implements Movable {
   static motor: string;
   static cv: number;
   constructor(marca: string, modelo: string, antiguedad: number, color: string, tipo:string, public readonly numRuedas: number, public readonly motor: string, public readonly cv: number){
-    super(marca, modelo,antiguedad,color);
+    super(marca, modelo,antiguedad,color, tipo);
     VehiclesPrivate.marca = marca;
     VehiclesPrivate.modelo = modelo;
     VehiclesPrivate.antiguedad = antiguedad;
@@ -383,7 +385,7 @@ export class VehiclesPublic extends Vehicles implements Movable {
   static motor: string;
   static cv: number;
   constructor(marca: string, modelo: string, antiguedad: number, color: string, tipo:string, capacidadPasajeros : number, public readonly numRuedas: number, public readonly motor: string, public readonly cv: number){
-    super(marca, modelo,antiguedad,color);
+    super(marca, modelo,antiguedad,color, tipo);
     VehiclesPublic.marca = marca;
     VehiclesPublic.modelo = modelo;
     VehiclesPublic.antiguedad = antiguedad;
@@ -421,6 +423,23 @@ export class VehiclesPublic extends Vehicles implements Movable {
   getCV(){
     return VehiclesPublic.cv;
   }
+}
+
+export class Street extends Vehicles{
+  static calle: string;
+  static localidad: string;
+  static velocidad: number;
+  static cantidadCoche: number;
+  constructor(calle: string, localidad: string, marca: string, modelo: string, antiguedad: number, color: string, tipo:string, cantidadCoche: number, velocidad: number){
+    super(marca, modelo,antiguedad,color, tipo);
+    Street.calle = calle;
+    Street.localidad = localidad;
+    Street.velocidad=velocidad;
+    Street.cantidadCoche = cantidadCoche;
+  }
+
+  
+  
 }
 
 
