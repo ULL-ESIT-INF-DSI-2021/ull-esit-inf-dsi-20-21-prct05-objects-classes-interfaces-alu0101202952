@@ -244,6 +244,13 @@ var BM = /** @class */ (function () {
     BM.prototype.getAbstract = function () {
         return this.abstract;
     };
+    BM.prototype.getPublicationDate = function () {
+        var aux = '';
+        for (var i = 0; i < this.publicationDate.length; i++) {
+            aux += this.publicationDate[i] + ', ';
+        }
+        console.log("Publication Date of article: " + aux);
+    };
     BM.prototype.getEditorial = function () {
         return this.editorial;
     };
@@ -262,6 +269,7 @@ databaseArticles.forEach(function (article) {
     console.log(article.getEmailAuthor() + "\n");
     console.log(article.getKeywords() + "\n");
     console.log("Abstract: " + article.getAbstract() + "\n");
+    console.log(article.getPublicationDate() + "\n");
     console.log("Editorial: " + article.getEditorial() + "\n");
     console.log("Citations: " + article.getCitations() + "\n");
     //console.log(`\nReference APA formar without DOI: ${article.referenceAPAWDOI()}\n`);

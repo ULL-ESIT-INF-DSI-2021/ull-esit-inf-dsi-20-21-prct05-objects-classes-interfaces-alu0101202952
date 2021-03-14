@@ -13,6 +13,7 @@ export declare class BM {
     getEmailAuthor(): void;
     getKeywords(): void;
     getAbstract(): String;
+    getPublicationDate(): void;
     getEditorial(): String;
     getCitations(): number;
 }
