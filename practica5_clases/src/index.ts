@@ -384,10 +384,10 @@ export class VehiclesPublic extends Vehicles {
   }
   getColor(){
     return Vehicles.color;
-  }/*
+  }
   getTipo(){
     return VehiclesPublic.tipo;
-  }
+  }/*
   getCapacidad(){
     return VehiclesPublic.capacidadPasajeros;
   }*/
@@ -404,7 +404,7 @@ databaseVehiclesPrivate.forEach((vehiclepr) => {
 });
 
 databaseVehiclesPublic.forEach((vehiclepu) => {
-  console.log(`El vehículo público es un ${vehiclepu.getMarca()} ${vehiclepu.getModelo()} con ${vehiclepu.getAntiguedad()} años, color ${vehiclepu.getColor()}, `);
+  console.log(`El vehículo público es un ${vehiclepu.getMarca()} ${vehiclepu.getModelo()} con ${vehiclepu.getAntiguedad()} años, color ${vehiclepu.getColor()},  clase ${vehiclepu.getTipo()}`);
 });
-// clase ${vehicle.getTipo()}
+//
 
