@@ -233,6 +233,10 @@ export class Pokedex{
     getAbstract(){
       return this.abstract;
     }
+
+    getEditorial(){
+      return this.editorial;
+    }
   } //class BM ends
 
 
@@ -244,5 +248,6 @@ export class Pokedex{
   console.log(`********************************************************************\n`);
   databaseArticles.forEach((article) => {
     console.log(`Title: "${article.getTitle()}"\n`);
-    console.log(`${article.getAuthor()}\n`);
+    console.log(`Abstract: ${article.getAbstract()}\n`);
+    console.log(`Editorial: ${article.getEditorial()}\n`);
  });   
