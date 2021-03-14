@@ -340,6 +340,10 @@ export class VehiclesPrivate extends Vehicles {
   getMarca(){
     return Vehicles.marca;
   }
+
+  getModelo(){
+    return Vehicles.modelo;
+  }
 } //end class VehiclesPrivate
 
 export class VehiclesPublic extends Vehicles {
