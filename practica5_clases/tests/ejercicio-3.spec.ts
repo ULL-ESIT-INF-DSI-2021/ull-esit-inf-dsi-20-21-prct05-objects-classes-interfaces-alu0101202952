@@ -30,8 +30,7 @@ describe('VehiclePrivate', () => {
 });
 
 describe('VehiclePublic', () => {
-  it('vehicle1.getMarca() returns marca of vehicle1', () => {
+  it('titsa.getMarca() returns marca of titsa guagua', () => {
     return expect(titsa.getMarca()).to.be.equal("Scania");
   })
-
 });

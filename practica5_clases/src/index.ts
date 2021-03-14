@@ -361,15 +361,50 @@ export class VehiclesPrivate extends Vehicles {
 } //end class VehiclesPrivate
 
 export class VehiclesPublic extends Vehicles {
+  static tipo: string;
+  static capacidadPasajeros : number;
   constructor(marca: string, modelo: string, antiguedad: number, color: string, tipo:string, capacidadPasajeros : number){
     super(marca, modelo,antiguedad,color);
+    Vehicles.marca = marca;
+    Vehicles.modelo = modelo;
+    Vehicles.antiguedad = antiguedad;
+    Vehicles.color = color;
+    VehiclesPublic.tipo = tipo;
+    VehiclesPublic.capacidadPasajeros = capacidadPasajeros;
   }
+  getMarca(){
+    return Vehicles.marca;
+  }
+  /*
+  getModelo(){
+    return Vehicles.modelo;
+  }
+  getAntiguedad(){
+    return Vehicles.antiguedad;
+  }
+  getColor(){
+    return Vehicles.color;
+  }
+  getTipo(){
+    return VehiclesPublic.tipo;
+  }
+  getCapacidad(){
+    return VehiclesPublic.capacidadPasajeros;
+  }*/
 }
 
 
 let vehicle1 = new VehiclesPrivate("Seat", "Ibiza", 5, "azul", "turismo");
-let databaseVehicles = [vehicle1];
+let titsa = new VehiclesPublic("Scania", "K380", 8, "verde", "guagua", 55);
+let databaseVehiclesPrivate = [vehicle1];
+let databaseVehiclesPublic = [titsa];
 
-databaseVehicles.forEach((vehicle) => {
-  console.log(`El coche es un ${vehicle.getMarca()} ${vehicle.getModelo()} con ${vehicle.getAntiguedad()} años, color ${vehicle.getColor() }, clase ${vehicle.getTipo()}`);
+databaseVehiclesPrivate.forEach((vehicle) => {
+  console.log(`El vehículo privado es un ${vehicle.getMarca()} ${vehicle.getModelo()} con ${vehicle.getAntiguedad()} años, color ${vehicle.getColor() }, clase ${vehicle.getTipo()}`);
 });
+
+databaseVehiclesPublic.forEach((vehicle) => {
+  console.log(`El vehículo público es un ${vehicle.getMarca()}`);
+});
+// ${vehicle.getModelo()} con ${vehicle.getAntiguedad()} años, color ${vehicle.getColor() }, clase ${vehicle.getTipo()}
+
