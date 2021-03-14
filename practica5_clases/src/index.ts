@@ -1,3 +1,5 @@
+// EJERCICIO 1
+/*
 export class Pokedex{
     private name: string;
     private weight: number;
@@ -29,20 +31,6 @@ export class Pokedex{
       getType(){
         return this.type;
       }
-
-      /*
-      getStats(){
-        return this.stats;
-      }*/
-
-      /*
-      getAttack(){
-        var attack;
-        for(var i = 0; i < this.stats.length;i++){
-          attack = this.stats([0],[1],[2],[3]) ;
-        }
-        return attack;
-      }*/
 
   } //class pokedex ends
   
@@ -157,7 +145,7 @@ export class Pokedex{
     }
 
 
-    public start(type1: string, type2: string, hp1: number, hp2: number/*, dañoPoke1:number, dañoPoke2:number*/) {
+    public start(type1: string, type2: string, hp1: number, hp2: number) {
       var i;
       var j;
       var result1;
@@ -204,3 +192,34 @@ export class Pokedex{
  console.log(`\t\t      START THE BATTLE!!!`);
  console.log(`********************************************************************\n`);
  console.log(pokemon_.start(pok1.getType(), pok2.getType(), 75, 95));
+ */
+
+
+ //********************************************************************************* */
+ // EJERCICIO 2
+ export class BM{
+  private title: String;
+  private author: () => string[];
+  private emailAuthor: () => string[];
+  private keywords: () => string[];
+  private abstract: String;
+  private publicationDate: (day: number, month: number, year: number) => number[];
+  private editorial: String;
+  private countCitations: number;
+
+    constructor(title: String, author: () => string[], emailAuthor: () => string[], keywords: () => string[], abstract: String, publicationDate: (day: number, month: number, year: number) => number[], editorial: String, countCitations: number) {
+      this.title = title;
+      this.author = author;
+      this.emailAuthor = emailAuthor;
+      this.keywords = keywords;
+      this.abstract = abstract;
+      this.publicationDate = publicationDate;
+      this.editorial = editorial;
+      this.countCitations = countCitations;
+    }
+/*
+    getTitle(){
+      return this.title;
+    }*/
+  } //class BM ends
+
