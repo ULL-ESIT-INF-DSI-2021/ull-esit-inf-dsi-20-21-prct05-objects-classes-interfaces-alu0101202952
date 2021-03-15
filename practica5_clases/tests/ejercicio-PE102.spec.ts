@@ -5,6 +5,7 @@ import {Rational} from '../src/index';
 
 let rational1 = new Rational(4,8);
 let rational2 = new Rational(3,5);
+let rational3 = new Rational(1,2);
 
 describe('Rational', () => {
     it('rartional1.getNumerador() returns numerador del racional', () => {
@@ -24,5 +25,8 @@ describe('Rational', () => {
     })
     it('rartional2.inverso(3,5) muestra el inverso del racional', () => {
         return expect(rational2.inverso(3,5)).to.be.equal(undefined);
+    })
+    it('rartional23.suma(3,5,1,2) muestra la suma de racionales', () => {
+        return expect(rational2.suma(3,5,1,2)).to.be.equal(undefined);
     })
 });
