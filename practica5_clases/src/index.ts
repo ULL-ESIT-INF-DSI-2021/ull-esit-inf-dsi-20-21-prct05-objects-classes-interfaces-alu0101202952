@@ -497,6 +497,8 @@ export class Rational{
     return this.denominador;
   }
 
-  
+  setNumerador(numerador: number){
+    numerador = numerador;
+  }
 
 }
