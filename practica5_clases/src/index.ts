@@ -481,6 +481,11 @@ databaseVehiclesStreet.forEach((vehiclestr) => {
 
 
 //EJERCICIO PE-102
+/**
+ * **Class RATIONAL{}**
+ * Crea racionales con propiedades de numerador y denominador. Tiene métodos con operaciones de racionales, suma
+ * inversa, simplificar, restar, multiplicar, dividir, además de los getters y setters de los numeradores y denominadores
+ */
 export class Rational{
   private numerador: number;
   private denominador: number;
@@ -512,7 +517,13 @@ export class Rational{
     }
   }
 
-  // Método para simplificar el racional
+  /**
+   * **Funcion simplificación()**
+   * > ¿Qué hace?
+   * > Simplifica el racional por el máximo común divisor
+   * @param numerador del racional
+   * @param denominador del denominador
+   */
   public simplificacion(numerador: number, denominador: number) {
     do {
       var i=2;
@@ -533,7 +544,12 @@ export class Rational{
     console.log(`Racional simplificado: ${numerador}/${denominador}`);
   }
 
-  
+  /**
+   * **Función inverso()**
+   * > ¿Qué hace?
+   * > Retorna un nuevo objeto racional con el numerador y denominador inverido
+   * @returns 
+   */
   public inverso() {
     return new Rational(this.denominador, this.numerador);
   }
