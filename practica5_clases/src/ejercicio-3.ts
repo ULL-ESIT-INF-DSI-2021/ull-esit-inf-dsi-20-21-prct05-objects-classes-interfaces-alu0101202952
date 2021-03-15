@@ -1,3 +1,4 @@
+/*
 export class Vehicles {
     static modelo: string;
     static antiguedad: number;
@@ -158,3 +159,4 @@ export class Vehicles {
   databaseVehiclesStreet.forEach((vehiclestr) => {
     console.log(`+ El vehículo ${coche1} circula a ${vehiclestr.getVelocidad()} KM/h`);
   });
+  */

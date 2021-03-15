@@ -477,3 +477,15 @@ databaseVehiclesStreet.forEach((vehiclestr) => {
   console.log(`+ El vehículo ${coche1} circula a ${vehiclestr.getVelocidad()} KM/h`);
 });
 */
+
+
+
+//EJERCICIO PE-102
+export class Rational{
+  private numerador: number;
+  private denominador: number;
+  constructor(numerador: number, denominador: number){
+    this.numerador = numerador;
+    this.denominador = denominador;    
+  }
+}

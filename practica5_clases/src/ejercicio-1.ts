@@ -46,7 +46,7 @@ constructor(type1:string, type2:string) {
 
 }
   
-public combat(type1: string, type2: string) {
+/*public combat(type1: string, type2: string) {
   var type1 = pok1.getType();
   var type2 = pok2.getType();
   var attack1 = 75;
@@ -191,3 +191,4 @@ console.log(`\n*****************************************************************
 console.log(`\t\t      START THE BATTLE!!!`);
 console.log(`********************************************************************\n`);
 console.log(pokemon_.start(pok1.getType(), pok2.getType(), 75, 95));
+*/

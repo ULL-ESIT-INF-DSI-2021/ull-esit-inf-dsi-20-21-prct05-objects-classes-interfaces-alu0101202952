@@ -1,4 +1,5 @@
-export class BM{
+
+/*export class BM{
     private title: String;
     private author = new Array();
     private emailAuthor = new Array();
@@ -109,3 +110,4 @@ export class BM{
       console.log(`\n********************************************************************\n`);
       
    });   
+   */
