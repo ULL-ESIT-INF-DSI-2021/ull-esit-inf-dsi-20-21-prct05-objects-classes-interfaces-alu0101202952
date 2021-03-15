@@ -583,6 +583,15 @@ export class Rational{
     }
   }
 
+  /**
+   * **Función suma()**
+   * > ¿Qué hace?
+   * > Recibe un objeto rational y lo sresta con el objeto invocante
+   * @param num1 
+   * @param den1 
+   * @param num2 
+   * @param den2 
+   */
   public resta(num1: number, den1: number, num2: number, den2: number) {
     var newDenominador;
     var newNumerador;
@@ -603,6 +612,15 @@ export class Rational{
     }
   }
 
+  /**
+   * **Función suma()**
+   * > ¿Qué hace?
+   * > Recibe un objeto rational y lo multiplica con el objeto invocante
+   * @param num1 
+   * @param den1 
+   * @param num2 
+   * @param den2 
+   */
   public multiplicacion(num1: number, den1: number, num2: number, den2: number) {
     var newDenominador;
     var newNumerador;
