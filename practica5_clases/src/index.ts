@@ -530,11 +530,22 @@ export class Rational{
         
       }
     }while (multiplo==1);  
-    console.log(`Racional simplificado: ${numerador} / ${denominador}`);
+    console.log(`Racional simplificado: ${numerador}/${denominador}`);
+  }
+
+  
+  public inverso(numerador: number, denominador: number) {
+    var newNumerador = denominador;
+    var newDenominador = numerador;
+    console.log(`Racional invertido: ${newNumerador}/${newDenominador}`);
   }
 
 }// end class Rational
 
 let rational1 = new Rational(4,8);
-console.log(`Racional sin simplificar: ${rational1.getNumerador()} / ${rational1.getDenominador()}`);
+let rational2 = new Rational(3,5);
+console.log(`Racional sin simplificar: ${rational1.getNumerador()}/${rational1.getDenominador()}`);
 console.log(`${rational1.simplificacion(4,8)}`);
+console.log(`\n****************************************\n`);
+console.log(`Racional 2: ${rational2.getNumerador()}/${rational2.getDenominador()}`);
+console.log(`${rational2.inverso(3,5)}`);

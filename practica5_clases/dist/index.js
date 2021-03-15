@@ -503,9 +503,37 @@ var Rational = /** @class */ (function () {
             console.log("El denominador no puede ser cero");
         }
     };
+    // Método para simplificar el racional
+    Rational.prototype.simplificacion = function (numerador, denominador) {
+        do {
+            var i = 2;
+            var multiplo = 0;
+            var auxmultiplo = i;
+            while (i <= numerador && multiplo == 0) {
+                if (numerador % i == 0 && denominador % i == 0) {
+                    multiplo = 1;
+                }
+                i++;
+            }
+            if (multiplo == 1) {
+                numerador = numerador / auxmultiplo;
+                denominador = denominador / auxmultiplo;
+            }
+        } while (multiplo == 1);
+        console.log("Racional simplificado: " + numerador + "/" + denominador);
+    };
+    Rational.prototype.inverso = function (numerador, denominador) {
+        var newNumerador = denominador;
+        var newDenominador = numerador;
+        console.log("Racional invertido: " + newNumerador + "/" + newDenominador);
+    };
     return Rational;
 }()); // end class Rational
 exports.Rational = Rational;
 var rational1 = new Rational(4, 8);
-console.log("Racional sin simplificar: " + rational1.getNumerador() + " / " + rational1.getDenominador());
-//console.log(`${rational1.simplificacion(4,8)}`);
+var rational2 = new Rational(3, 5);
+console.log("Racional sin simplificar: " + rational1.getNumerador() + "/" + rational1.getDenominador());
+console.log("" + rational1.simplificacion(4, 8));
+console.log("\n****************************************\n");
+console.log("Racional 2: " + rational2.getNumerador() + "/" + rational2.getDenominador());
+console.log("" + rational2.inverso(3, 5));

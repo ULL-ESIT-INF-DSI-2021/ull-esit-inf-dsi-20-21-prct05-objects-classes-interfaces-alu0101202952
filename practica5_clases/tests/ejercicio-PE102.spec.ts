@@ -23,6 +23,6 @@ describe('Rational', () => {
         return expect(rational1.simplificacion(4,8)).to.be.equal(undefined);
     })
     it('rartional2.inverso(3,5) muestra el inverso del racional', () => {
-        return expect(rartional2.inverso(3,5)).to.be.equal(undefined);
+        return expect(rational2.inverso(3,5)).to.be.equal(undefined);
     })
 });
