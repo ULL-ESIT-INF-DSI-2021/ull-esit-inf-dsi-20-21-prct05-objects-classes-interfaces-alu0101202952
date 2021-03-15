@@ -548,6 +548,27 @@ var Rational = /** @class */ (function () {
             console.log("No encontrada la suma");
         }
     };
+    Rational.prototype.resta = function (num1, den1, num2, den2) {
+        var newDenominador;
+        var newNumerador;
+        if (den1 == den2) {
+            newDenominador = den1 = den2;
+            newNumerador = num1 - num2;
+            console.log("Resta: " + newNumerador + "/" + newDenominador);
+            console.log("###################");
+            this.simplificacion(newNumerador, newDenominador);
+        }
+        else if (den1 != den2) {
+            newDenominador = den1 * den2;
+            newNumerador = ((newDenominador / den1) * num1) - ((newDenominador / den2) * num2);
+            console.log("Resta: " + newNumerador + "/" + newDenominador);
+            console.log("###################");
+            this.simplificacion(newNumerador, newDenominador);
+        }
+        else {
+            console.log("No encontrada la suma");
+        }
+    };
     return Rational;
 }()); // end class Rational
 exports.Rational = Rational;
@@ -564,3 +585,8 @@ console.log("Racional 2: " + rational2.getNumerador() + "/" + rational2.getDenom
 console.log("Racional 3: " + rational3.getNumerador() + "/" + rational3.getDenominador());
 console.log("\nSUMA DEL racional 2 y del racional 3 \n");
 console.log("" + rational3.suma(3, 5, 1, 2));
+console.log("\n****************************************\n");
+console.log("Racional 2: " + rational2.getNumerador() + "/" + rational2.getDenominador());
+console.log("Racional 3: " + rational3.getNumerador() + "/" + rational3.getDenominador());
+console.log("\nRESTA DEL racional 2 y del racional 3 \n");
+console.log("" + rational3.resta(3, 5, 1, 2));

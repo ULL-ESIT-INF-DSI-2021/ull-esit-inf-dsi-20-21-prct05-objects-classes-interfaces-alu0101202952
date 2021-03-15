@@ -558,7 +558,26 @@ export class Rational{
     } else{
       console.log(`No encontrada la suma`);
     }
-    
+  }
+
+  public resta(num1: number, den1: number, num2: number, den2: number) {
+    var newDenominador;
+    var newNumerador;
+    if(den1 == den2){
+      newDenominador = den1 = den2;
+      newNumerador = num1 - num2;
+      console.log(`Resta: ${newNumerador}/${newDenominador}`);
+      console.log(`###################`);
+      this.simplificacion(newNumerador,newDenominador);
+    } else if(den1 != den2){
+      newDenominador = den1 * den2;
+      newNumerador = ((newDenominador/den1)*num1) - ((newDenominador/den2)*num2);
+      console.log(`Resta: ${newNumerador}/${newDenominador}`);
+      console.log(`###################`);
+      this.simplificacion(newNumerador,newDenominador);
+    } else{
+      console.log(`No encontrada la suma`);
+    }
   }
 
 }// end class Rational
@@ -566,13 +585,22 @@ export class Rational{
 let rational1 = new Rational(4,8);
 let rational2 = new Rational(3,5);
 let rational3 = new Rational(1,2);
+
 console.log(`Racional sin simplificar: ${rational1.getNumerador()}/${rational1.getDenominador()}`);
 console.log(`${rational1.simplificacion(4,8)}`);
+
 console.log(`\n****************************************\n`);
 console.log(`Racional 2: ${rational2.getNumerador()}/${rational2.getDenominador()}`);
 console.log(`${rational2.inverso(3,5)}`);
+
 console.log(`\n****************************************\n`);
 console.log(`Racional 2: ${rational2.getNumerador()}/${rational2.getDenominador()}`);
 console.log(`Racional 3: ${rational3.getNumerador()}/${rational3.getDenominador()}`);
 console.log(`\nSUMA DEL racional 2 y del racional 3 \n`);
 console.log(`${rational3.suma(3,5,1,2)}`);
+
+console.log(`\n****************************************\n`);
+console.log(`Racional 2: ${rational2.getNumerador()}/${rational2.getDenominador()}`);
+console.log(`Racional 3: ${rational3.getNumerador()}/${rational3.getDenominador()}`);
+console.log(`\nRESTA DEL racional 2 y del racional 3 \n`);
+console.log(`${rational3.resta(3,5,1,2)}`);
