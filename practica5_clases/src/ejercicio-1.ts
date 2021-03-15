@@ -1,4 +1,4 @@
-export class Pokedex{
+/*export class Pokedex{
   private name: string;
   private weight: number;
   private height: number;
@@ -185,10 +185,7 @@ console.log(`└───────────────────── 
 let pokemon_ = new Combat(pok1.getType(), pok2.getType()); 
 console.log(pokemon_.combat(pok1.getType(), pok2.getType()));
 
-
-
 console.log(`\n********************************************************************`);
 console.log(`\t\t      START THE BATTLE!!!`);
 console.log(`********************************************************************\n`);
-console.log(pokemon_.start(pok1.getType(), pok2.getType(), 75, 95));
-*/
+console.log(pokemon_.start(pok1.getType(), pok2.getType(), 75, 95));*/

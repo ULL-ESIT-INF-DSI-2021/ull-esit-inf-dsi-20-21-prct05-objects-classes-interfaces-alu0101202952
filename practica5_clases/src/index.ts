@@ -494,14 +494,25 @@ export class Rational{
   }
 
   getDenominador(){
-    return this.denominador;
+    if(this.denominador != 0){
+      return this.denominador;
+    } else {
+      console.log(`Denominador no válido`);
+    }
   }
 
   setNumerador(numerador: number){
     this.numerador = numerador;
   }
   setDenominador(denominador: number){
-    this.denominador = denominador;
+    if(denominador != 0){
+      this.denominador = denominador;
+    } else{
+      console.log(`El denominador no puede ser cero`);
+    }
   }
 
-}
+}// end class Rational
+
+let rational1 = new Rational(1,2);
+console.log(`Racional: ${rational1.getNumerador()} / ${rational1.getDenominador()}`);
