@@ -548,12 +548,21 @@ export class Rational{
    * **Función inverso()**
    * > ¿Qué hace?
    * > Retorna un nuevo objeto racional con el numerador y denominador inverido
-   * @returns 
+   * @returns new Rational(this.denominador, this.numerador)
    */
   public inverso() {
     return new Rational(this.denominador, this.numerador);
   }
 
+  /**
+   * **Función suma()**
+   * > ¿Qué hace?
+   * > Recibe un objeto rational y lo suma con el objeto invocante
+   * @param num1  
+   * @param den1 
+   * @param num2 
+   * @param den2 
+   */
   public suma(num1: number, den1: number, num2: number, den2: number) {
     var newDenominador;
     var newNumerador;
