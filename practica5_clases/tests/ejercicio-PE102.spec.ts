@@ -6,12 +6,13 @@ import {Rational} from '../src/index';
 let rational1 = new Rational(4,8);
 let rational2 = new Rational(3,5);
 let rational3 = new Rational(1,2);
+let rational4;
 
 describe('Rational', () => {
     it('rartional1.getNumerador() returns numerador del racional', () => {
       return expect(rational1.getNumerador()).to.be.equal(4);
     })
-    
+
     it('rartional1.getDenominador() returns denominador del racional', () => {
         return expect(rational1.getDenominador()).to.be.equal(8);
     })
