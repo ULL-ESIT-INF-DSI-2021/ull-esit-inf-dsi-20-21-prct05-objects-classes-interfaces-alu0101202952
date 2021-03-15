@@ -29,4 +29,7 @@ describe('Rational', () => {
     it('rartional23.suma(3,5,1,2) muestra la suma de racionales', () => {
         return expect(rational2.suma(3,5,1,2)).to.be.equal(undefined);
     })
+    it('rartional23.resta(3,5,1,2) muestra la resta de racionales', () => {
+        return expect(rational2.resta(3,5,1,2)).to.be.equal(undefined);
+    })
 });
