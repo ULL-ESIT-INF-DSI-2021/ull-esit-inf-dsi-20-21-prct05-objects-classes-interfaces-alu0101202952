@@ -511,8 +511,8 @@ export class Rational{
       console.log(`El denominador no puede ser cero`);
     }
   }
-/*
 
+  // Método para simplificar el racional
   public simplificacion(numerador: number, denominador: number) {
     do {
       var i=2;
@@ -531,10 +531,10 @@ export class Rational{
       }
     }while (multiplo==1);  
     console.log(`Racional simplificado: ${numerador} / ${denominador}`);
-  }*/
+  }
 
 }// end class Rational
 
 let rational1 = new Rational(4,8);
 console.log(`Racional sin simplificar: ${rational1.getNumerador()} / ${rational1.getDenominador()}`);
-//console.log(`${rational1.simplificacion(4,8)}`);
+console.log(`${rational1.simplificacion(4,8)}`);
