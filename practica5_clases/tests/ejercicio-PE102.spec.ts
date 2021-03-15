@@ -14,4 +14,7 @@ describe('Rational', () => {
     it('rartional1.setNumerador() asigna el numerador a la propiedad numerador de racional', () => {
         return expect(rational1.setNumerador(1)).to.be.equal(undefined);
     })
+    it('rartional1.setDenominador() asigna el Denominador a la propiedad numerador de racional', () => {
+        return expect(rational1.setDenominador(2)).to.be.equal(undefined);
+    })
 });
