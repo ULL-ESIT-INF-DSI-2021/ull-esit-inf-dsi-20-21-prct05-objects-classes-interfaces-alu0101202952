@@ -3,13 +3,14 @@ export declare class Pokedex {
     private weight;
     private height;
     private type;
-    stats: (attack: number[], defense: number[], speed: number[], hp: number[]) => number[];
+    private stats;
     static pokemon: any;
-    constructor(name: string, weight: number, height: number, type: string, stats: (attack: number[], defense: number[], speed: number[], hp: number[]) => number[]);
+    constructor(name: string, weight: number, height: number, type: string, stats?: any[]);
     getName(): string;
     getWeight(): number;
     getHeight(): number;
     getType(): string;
+    getStats(): void;
 }
 export declare class Combat {
     type1: string;
