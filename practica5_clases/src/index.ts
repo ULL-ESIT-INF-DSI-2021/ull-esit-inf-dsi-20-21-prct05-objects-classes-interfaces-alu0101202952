@@ -491,6 +491,9 @@ export class Rational{
 
   getNumerador(){
     return this.numerador;
-    
+  }
+
+  getDenominador(){
+    return this.denominador;
   }
 }
