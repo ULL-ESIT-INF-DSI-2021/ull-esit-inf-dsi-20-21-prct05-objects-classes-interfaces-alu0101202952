@@ -486,7 +486,7 @@ export class Rational{
   private denominador: number;
   constructor(numerador: number, denominador: number){
     this.numerador = numerador;
-    this.denominador = denominador;    
+    this.denominador = denominador;  
   }
 
   getNumerador(){
@@ -511,8 +511,30 @@ export class Rational{
       console.log(`El denominador no puede ser cero`);
     }
   }
+/*
+
+  public simplificacion(numerador: number, denominador: number) {
+    do {
+      var i=2;
+      var multiplo=0;
+      var auxmultiplo = i;
+      while (i <= numerador && multiplo == 0){
+        if (numerador % i == 0 && denominador % i == 0){
+          multiplo = 1;
+        }
+        i++;
+      }
+      if (multiplo == 1){
+        numerador=numerador/auxmultiplo;
+        denominador=denominador/auxmultiplo;
+        
+      }
+    }while (multiplo==1);  
+    console.log(`Racional simplificado: ${numerador} / ${denominador}`);
+  }*/
 
 }// end class Rational
 
-let rational1 = new Rational(1,2);
-console.log(`Racional: ${rational1.getNumerador()} / ${rational1.getDenominador()}`);
+let rational1 = new Rational(4,8);
+console.log(`Racional sin simplificar: ${rational1.getNumerador()} / ${rational1.getDenominador()}`);
+//console.log(`${rational1.simplificacion(4,8)}`);

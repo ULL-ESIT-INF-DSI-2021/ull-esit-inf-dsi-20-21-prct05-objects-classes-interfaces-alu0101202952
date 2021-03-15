@@ -506,5 +506,6 @@ var Rational = /** @class */ (function () {
     return Rational;
 }()); // end class Rational
 exports.Rational = Rational;
-var rational1 = new Rational(1, 2);
-console.log("Racional: " + rational1.getNumerador() + " / " + rational1.getDenominador());
+var rational1 = new Rational(4, 8);
+console.log("Racional sin simplificar: " + rational1.getNumerador() + " / " + rational1.getDenominador());
+//console.log(`${rational1.simplificacion(4,8)}`);

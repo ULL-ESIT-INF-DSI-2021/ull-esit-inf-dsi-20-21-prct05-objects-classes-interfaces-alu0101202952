@@ -3,7 +3,7 @@ import {expect} from 'chai';
 import {Rational} from '../src/index';
 
 
-let rational1 = new Rational(1,2);
+let rational1 = new Rational(4,8);
 describe('Rational', () => {
     it('rartional1.getNumerador() returns numerador del racional', () => {
       return expect(rational1.getNumerador()).to.be.equal(1);
@@ -16,5 +16,8 @@ describe('Rational', () => {
     })
     it('rartional1.setDenominador() asigna el Denominador a la propiedad numerador de racional', () => {
         return expect(rational1.setDenominador(2)).to.be.equal(undefined);
+    })
+    it('rartional1.simplificacion(4,8) simplifica el racional', () => {
+        return expect(rational1.simplificacion(4,8)).to.be.equal(undefined);
     })
 });
