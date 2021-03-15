@@ -488,4 +488,9 @@ export class Rational{
     this.numerador = numerador;
     this.denominador = denominador;    
   }
+
+  getNumerador(){
+    return this.numerador;
+    
+  }
 }
