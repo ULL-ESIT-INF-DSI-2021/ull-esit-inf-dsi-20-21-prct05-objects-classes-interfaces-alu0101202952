@@ -433,13 +433,51 @@ Guardo en un commit y subo al repo el acierto:
 
 Estos pasos los repetiría con cada getter hasta que se creara una estructura como:
 
-![Estructura clss BM](https://i.imgur.com/w2380a2.jpg)
+![Estructura class BM](https://i.imgur.com/w2380a2.jpg)
+
+Y así con todo se crearía las expectativas correctamente :
+
+![expects correctos](https://i.imgur.com/iHrPqTv.jpg)
+
+Después se nos pidió mostrar los artículos por pantalla en una tabla, hice su test **falló** y desarrollé el código de la manera:
+
+![codigo tabla](https://i.imgur.com/qoM8Cgd.jpg)
+
+Cuya salida correcta fue:
+
+![salida por pantalla](https://i.imgur.com/Anf545t.jpg)
+
+Finalizando así un buen gestor bibliográfico perfecto para cualquier amante de la lectura.
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━✧❂✧━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 ### EJERCICIO 3
+
+El apartado del ejercicio 3, alojado en [link Enunciado de la Práctica 5](https://ull-esit-inf-dsi-2021.github.io/prct05-objects-classes-interfaces/) me hace replantear la siguiente estructura que formulé para el planteamiento del ejercicio:
+
+Se solicita crear una serie de clases que permitan representar los diferentes vehículos y medios de transporte que se pueden usar para desplazarse por una ciudad. Entre ellos podemos encontrar los coches, motos, patinetes, trenes, guaguas, bicicletas, etc. Crear una interfaz denominada Movable que incluya las propiedades y métodos necesarios que deberá implementar cualquier clase que represente a un objeto que pueda moverse. Además, una clase Street que represente los vehículos que circulan por una calle y localidad determinada.
+
+Mi primera idea fue crear una estructura de herencia de clases donde la raíz sea la clase Vehicles{}, que tenga los datos mínimos de cualquier tipo de vehículo: marca, modelo, color, tipo y antiguedad. Además crear una interfaz **Movable** que distinga las propiedades que hacen mover a los vehículos como: el número de ruedas, el caballaje y el tipo de motor. A partir de ahí crearía las demás clases que heredan de esta clase padre e interfaz.
+
+- Class VehiclesPrivate{}: esta clase hereda de Vehicles e implementa la interfaz movable. Sus propiedades super, es decir que heredan de Vehicles, son marca, modelo, color, tipo y antiguedad. Implementa propiedades como: el número de ruedas, el caballaje y el tipo de motor procedentes de la interfaz de modo de **readonly**.
+- Class VehiclesPublic{}: esta clase hereda de Vehicles e implementa la interfaz movable. Sus propiedades super, es decir que heredan de Vehicles, son marca, modelo, color, tipo y antiguedad. Implementa propiedades como: el número de ruedas, el caballaje y el tipo de motor procedentes de la interfaz de modo de **readonly**. Además tiene una propiedad de capacidad de pasajeros que recogen algunos vehículos propios.
+- Class Street{}: esta clase hereda de Vehicles. Sus propiedades super, es decir que heredan de Vehicles, son marca, modelo, color, tipo y antiguedad. Además tiene propiedades propias sobre: calle con el nombre de la calle, localidad, numero de cocher que circulan y velocidad a la que lo hacen.
+
+Como se ha hecho según TDD, primero desarrollo las pruebas, estas fallan, las git commit -m  y subo y desarrollo al código, vuelvo a ejecutar los test y funcionan. Entonces los subo al repositorio ya correctos.
+
+Por ejemplo con la marca del coche:
+
+Hice la expectativa: 
+
+![expect fallo](https://i.imgur.com/Bjvym0C.jpg)
+
+Luego ejecuto `npm run test` y falla.
+
+![fallo expect](https://i.imgur.com/2xZ2Bxy.jpg)
+
+Guardo con `git commit -m "fallo test devolver marca coche"` y lo subo al repositorio:
 
 
 
@@ -473,5 +511,5 @@ Conclusión sobre la práctica e informe, aquí plantearé la dinámica de la pr
 
 
 - [Enunciado práctica](https://ull-esit-inf-dsi-2021.github.io/prct05-objects-classes-interfaces/)
-- [Repositorio con ejercicios y estructura básica](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101202952/tree/desarrollo/p3_Ejercicios_datos_funciones)
+- [Repositorio con ejercicios y estructura básica](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-alu0101202952/tree/desarrollo)
 - [Informe documentación con Typedoc](http://127.0.0.1:5500/docs/index.html)
