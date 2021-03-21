@@ -375,16 +375,16 @@ De la cual empleo el método round() de la clase **Math {}** para redondear el v
 
 **FUNCIÓN START()**
 
-eeeee
+![Funcion start test](https://i.imgur.com/gAlHHF1.jpg)
 
+Para comenzar con esta función primero hacemos la respectiva prueba unitaria, como se puede ver, dará fallo porque la función no ha sido creada, luego creamos la función start() que simulará el combate entre los equipos pokemons.
 
-
+![Función start](https://i.imgur.com/ZqBzeUg.jpg)
 
 
 Concluyendo así el programa y mostrando un auténtico combate Pokemon!!
 
-
-![Ejecución programa]()
+![Ejecucion programa](https://i.imgur.com/R5Z5yNy.jpg)
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━✧❂✧━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -395,9 +395,45 @@ Concluyendo así el programa y mostrando un auténtico combate Pokemon!!
 
 ### EJERCICIO 2
 
+El apartado del ejercicio 2, alojado en [link Enunciado de la Práctica 5](https://ull-esit-inf-dsi-2021.github.io/prct05-objects-classes-interfaces/) me hace replantear la siguiente estructura que formulé para el planteamiento del ejercicio:
+
+Se plantea un gestor bibliográfico. Mi idea principal fue estructurarlo en la clase BM, esta clase tendrá alojada las propiedades de los artículos, como el título, autores, email, etc. Esto basándome en los links:
+
+> [Link 1_ artículo](https://link.springer.com/article/10.1007%2Fs10479-019-03290-3)
+> [Link 2_artículo](https://link.springer.com/article/10.1007%2Fs10479-018-2970-4)
+
+Me basé en esos links para conseguir mostrar el mismo formato en mi Gestor bibliográfico, class BM, siendo BM (Bibliographic Manager). Además trabajar siempre con getters porque es una buena práctica. 
+
+Por tanto primero me centré en hacer la prueba unitaria, guardar el fallo por no crear la función y luego desarrollar el código y hacerle un **git commit -m**. Quedando tal que:
+
+Primero creo la expectativa de sacar el título del artículo:
+
+![Test](https://i.imgur.com/G3D9qf0.jpg)
+
+Luego ejecuto `npm run test` y falla.
+
+![fallo test](https://i.imgur.com/6kgvKdt.jpg)
+
+Guardo con `git commit -m "fallo test devolver título"` y lo subo al repositorio:
+
+![git fallo](https://i.imgur.com/YWGTVMI.jpg)
+
+Desarrollo el getter correspondiente para devolver el título:
+
+![código](https://i.imgur.com/MKgU4n8.jpg)
+
+Vuelvo a ejecutar `npm run test` y acierta:
+
+![acierto test](https://i.imgur.com/HjBo11C.jpg)
+
+Guardo en un commit y subo al repo el acierto:
+
+![git acierto](https://i.imgur.com/APGYu1U.jpg)
 
 
+Estos pasos los repetiría con cada getter hasta que se creara una estructura como:
 
+![Estructura clss BM](https://i.imgur.com/w2380a2.jpg)
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━✧❂✧━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
