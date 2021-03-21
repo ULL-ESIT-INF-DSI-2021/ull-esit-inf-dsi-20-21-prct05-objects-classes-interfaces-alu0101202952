@@ -51,7 +51,7 @@
 Los objetivos en esta práctica será que resolver una serie de ejercicios de programación que nos permitirán conocer más en profundidad los objetos, clases e interfaces del lenguaje TypeScript. Para ello empleando los conocimientos además, que ya tenemos, en typedoc, y la realización de las pruebas unitarias siguiendo los pasos de TDD, es decir, realizar pruebas y expectativas, ver su fallo y corregir el código y volver con la prueba y sus expectativas para que den acierto. Para ello tendremos que usar Mocha y Chai.
 
 - **ENLACE A LA DOCUMENTACIÓN EN TYPEDOC**
-> - [Informe documentación con Typedoc](http://127.0.0.1:5500/p3_Ejercicios_datos_funciones/docs/index.html)
+> - [Informe documentación con Typedoc](http://127.0.0.1:5500/docs/index.html)
 
 
 
@@ -128,7 +128,7 @@ Tras la estructura básica nos dedicaremos a trabajar en el directorio `./src` d
 
 Para conocer más sobre esta herramienta consultar [Typedoc](https://typedoc.org/). Como ya desde la práctica 3 nos habíamos introducido a la herramienta **Typedoc**, solo queda seguir los mismos pasos mecánicos para esta práctica. Dicho informe creado en Typedoc hecho con los comentarios de los ejercicios de esta práctica se aloja en:
 
-[Informe Typedoc Práctica 5]() 
+[Informe Typedoc Práctica 5](http://127.0.0.1:5500/docs/index.html) 
 
 O también mirando en los apartados **Objetivos** y **Bibliografía/ webgrafía** de este informe.
 
@@ -375,16 +375,16 @@ De la cual empleo el método round() de la clase **Math {}** para redondear el v
 
 **FUNCIÓN START()**
 
-eeeee
+![Funcion start test](https://i.imgur.com/gAlHHF1.jpg)
 
+Para comenzar con esta función primero hacemos la respectiva prueba unitaria, como se puede ver, dará fallo porque la función no ha sido creada, luego creamos la función start() que simulará el combate entre los equipos pokemons.
 
-
+![Función start](https://i.imgur.com/ZqBzeUg.jpg)
 
 
 Concluyendo así el programa y mostrando un auténtico combate Pokemon!!
 
-
-![Ejecución programa]()
+![Ejecucion programa](https://i.imgur.com/R5Z5yNy.jpg)
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━✧❂✧━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -395,9 +395,45 @@ Concluyendo así el programa y mostrando un auténtico combate Pokemon!!
 
 ### EJERCICIO 2
 
+El apartado del ejercicio 2, alojado en [link Enunciado de la Práctica 5](https://ull-esit-inf-dsi-2021.github.io/prct05-objects-classes-interfaces/) me hace replantear la siguiente estructura que formulé para el planteamiento del ejercicio:
+
+Se plantea un gestor bibliográfico. Mi idea principal fue estructurarlo en la clase BM, esta clase tendrá alojada las propiedades de los artículos, como el título, autores, email, etc. Esto basándome en los links:
+
+> [Link 1_ artículo](https://link.springer.com/article/10.1007%2Fs10479-019-03290-3)
+> [Link 2_artículo](https://link.springer.com/article/10.1007%2Fs10479-018-2970-4)
+
+Me basé en esos links para conseguir mostrar el mismo formato en mi Gestor bibliográfico, class BM, siendo BM (Bibliographic Manager). Además trabajar siempre con getters porque es una buena práctica. 
+
+Por tanto primero me centré en hacer la prueba unitaria, guardar el fallo por no crear la función y luego desarrollar el código y hacerle un **git commit -m**. Quedando tal que:
+
+Primero creo la expectativa de sacar el título del artículo:
+
+![Test](https://i.imgur.com/G3D9qf0.jpg)
+
+Luego ejecuto `npm run test` y falla.
+
+![fallo test](https://i.imgur.com/6kgvKdt.jpg)
+
+Guardo con `git commit -m "fallo test devolver título"` y lo subo al repositorio:
+
+![git fallo](https://i.imgur.com/YWGTVMI.jpg)
+
+Desarrollo el getter correspondiente para devolver el título:
+
+![código](https://i.imgur.com/MKgU4n8.jpg)
+
+Vuelvo a ejecutar `npm run test` y acierta:
+
+![acierto test](https://i.imgur.com/HjBo11C.jpg)
+
+Guardo en un commit y subo al repo el acierto:
+
+![git acierto](https://i.imgur.com/APGYu1U.jpg)
 
 
+Estos pasos los repetiría con cada getter hasta que se creara una estructura como:
 
+![Estructura clss BM](https://i.imgur.com/w2380a2.jpg)
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━✧❂✧━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -436,6 +472,6 @@ Conclusión sobre la práctica e informe, aquí plantearé la dinámica de la pr
 ## BIBLIOGRAFÍA Y/O WEBGRAFÍA
 
 
-- [Enunciado práctica](https://ull-esit-inf-dsi-2021.github.io/prct03-types-functions/)
+- [Enunciado práctica](https://ull-esit-inf-dsi-2021.github.io/prct05-objects-classes-interfaces/)
 - [Repositorio con ejercicios y estructura básica](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101202952/tree/desarrollo/p3_Ejercicios_datos_funciones)
-- [Informe documentación con Typedoc](http://127.0.0.1:5500/p3_Ejercicios_datos_funciones/docs/index.html)
+- [Informe documentación con Typedoc](http://127.0.0.1:5500/docs/index.html)
