@@ -1,4 +1,14 @@
-/*
+/**
+ * ### EJERCICIOs 3:
+ * Class Vehicle**
+ * #### ¿En qué consiste?
+ * Queremos guardar los datos de los vehículos en general
+ * @param modelo del vehículo
+ * @param antiguedad en años del vehiculo
+ * @param color del mismo
+ * @param marca 
+ * @param tipo si es turismo, sub, todoterreno, guagua
+ */
 export class Vehicles {
     static modelo: string;
     static antiguedad: number;
@@ -14,12 +24,36 @@ export class Vehicles {
     }
   } //end class Vehicles
   
+  /**
+ * ### EJERCICIOs 3:
+ * Interfaz Movable**
+ * #### ¿En qué consiste?
+ * Queremos guardar los coches que circulan y las propiedades por las cuales circulan
+ * @param numRuedas con el numero de ruedas
+ * @param motor tipo de motor gasolina, eléctruco, diesel o híbrido
+ * @param cv con la potencia en caballos
+ */
   export interface Movable{
     numRuedas: number;
     motor: string;
     cv: number;
   }
   
+  /**
+ * ### EJERCICIOs 3:
+ * Class VehiclesPrivate que hereda de Vehicles**
+ * #### ¿En qué consiste?
+ * Queremos guardar los datos de los vehículos privados
+ * PARÁMETROS HEREDADOS
+ * @param modelo del vehículo
+ * @param antiguedad en años del vehiculo
+ * @param color del mismo
+ * @param marca 
+ * @param tipo si es turismo, sub, moto, todoterreno...
+ * @param numRuedas con el numero de ruedas
+ * @param motor tipo de motor gasolina, eléctruco, diesel o híbrido
+ * @param cv con la potencia en caballos
+ */
   export class VehiclesPrivate extends Vehicles implements Movable {
     static tipo: string;
     static numRuedas: number;
@@ -62,6 +96,23 @@ export class Vehicles {
     }
   } //end class VehiclesPrivate
   
+
+/**
+ * ### EJERCICIOs 3:
+ * Class VehiclesPublic que hereda de Vehicles**
+ * #### ¿En qué consiste?
+ * Queremos guardar los datos de los vehículos publicos
+ * PARÁMETROS HEREDADOS
+ * @param modelo del vehículo
+ * @param antiguedad en años del vehiculo
+ * @param color del mismo
+ * @param marca 
+ * @param tipo si es turismo, sub, moto, todoterreno...+
+ * @param capacidadPasajeros con el numero de pasajeros en caso de guagua, tren...
+ * @param numRuedas con el numero de ruedas
+ * @param motor tipo de motor gasolina, eléctruco, diesel o híbrido
+ * @param cv con la potencia en caballos
+ */
   export class VehiclesPublic extends Vehicles implements Movable {
     static tipo: string;
     static capacidadPasajeros : number;
@@ -109,6 +160,22 @@ export class Vehicles {
     }
   }
   
+/**
+ * ### EJERCICIOs 3:
+ * Class Street que hereda de Vehicles**
+ * #### ¿En qué consiste?
+ * Queremos guardar los datos de los vehículos privados y públcos que circulan por la calle
+ * PARÁMETROS HEREDADOS
+ * @param calle 
+ * @param localidad 
+ * @param modelo del vehículo
+ * @param antiguedad en años del vehiculo
+ * @param color del mismo
+ * @param marca 
+ * @param tipo si es turismo, sub, moto, todoterreno...
+ * @param cantidadCoche el numero de coches que circulan
+ * @param velocidad que circulan
+ */
   export class Street extends Vehicles{
     static calle: string;
     static localidad: string;
@@ -159,4 +226,4 @@ export class Vehicles {
   databaseVehiclesStreet.forEach((vehiclestr) => {
     console.log(`+ El vehículo ${coche1} circula a ${vehiclestr.getVelocidad()} KM/h`);
   });
-  */
+  

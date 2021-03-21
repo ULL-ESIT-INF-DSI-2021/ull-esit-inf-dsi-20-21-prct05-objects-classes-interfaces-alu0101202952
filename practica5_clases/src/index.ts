@@ -486,6 +486,7 @@ databaseVehiclesStreet.forEach((vehiclestr) => {
  * Crea racionales con propiedades de numerador y denominador. Tiene métodos con operaciones de racionales, suma
  * inversa, simplificar, restar, multiplicar, dividir, además de los getters y setters de los numeradores y denominadores
  */
+/*
 export class Rational{
   private numerador: number;
   private denominador: number;
@@ -517,13 +518,6 @@ export class Rational{
     }
   }
 
-  /**
-   * **Funcion simplificación()**
-   * > ¿Qué hace?
-   * > Simplifica el racional por el máximo común divisor
-   * @param numerador del racional
-   * @param denominador del denominador
-   */
   public simplificacion(numerador: number, denominador: number) {
     do {
       var i=2;
@@ -544,25 +538,12 @@ export class Rational{
     console.log(`Racional simplificado: ${numerador}/${denominador}`);
   }
 
-  /**
-   * **Función inverso()**
-   * > ¿Qué hace?
-   * > Retorna un nuevo objeto racional con el numerador y denominador inverido
-   * @returns new Rational(this.denominador, this.numerador)
-   */
+ 
   public inverso() {
     return new Rational(this.denominador, this.numerador);
   }
 
-  /**
-   * **Función suma()**
-   * > ¿Qué hace?
-   * > Recibe un objeto rational y lo suma con el objeto invocante
-   * @param num1  
-   * @param den1 
-   * @param num2 
-   * @param den2 
-   */
+  
   public suma(num1: number, den1: number, num2: number, den2: number) {
     var newDenominador;
     var newNumerador;
@@ -583,15 +564,7 @@ export class Rational{
     }
   }
 
-  /**
-   * **Función suma()**
-   * > ¿Qué hace?
-   * > Recibe un objeto rational y lo sresta con el objeto invocante
-   * @param num1 
-   * @param den1 
-   * @param num2 
-   * @param den2 
-   */
+  
   public resta(num1: number, den1: number, num2: number, den2: number) {
     var newDenominador;
     var newNumerador;
@@ -612,15 +585,7 @@ export class Rational{
     }
   }
 
-  /**
-   * **Función suma()**
-   * > ¿Qué hace?
-   * > Recibe un objeto rational y lo multiplica con el objeto invocante
-   * @param num1 
-   * @param den1 
-   * @param num2 
-   * @param den2 
-   */
+  
   public multiplicacion(num1: number, den1: number, num2: number, den2: number) {
     var newDenominador;
     var newNumerador;
@@ -673,3 +638,4 @@ console.log(`Racional 2: ${rational2.getNumerador()}/${rational2.getDenominador(
 console.log(`Racional 3: ${rational3.getNumerador()}/${rational3.getDenominador()}`);
 console.log(`\nMULTIPLICACION DEL racional 2 y del racional 3 \n`);
 console.log(`${rational3.multiplicacion(3,5,1,2)}`);
+*/

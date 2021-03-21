@@ -1,4 +1,4 @@
-/*import 'mocha';
+import 'mocha';
 import {expect} from 'chai';
 import {BM} from '../src/ejercicio-2';
 
@@ -42,5 +42,5 @@ describe('BM (Bibliographic Manager)', () => {
         return expect(article1.referenceAPAWDOI()).to.be.equal(undefined);
     })
 });
-*/
+
 

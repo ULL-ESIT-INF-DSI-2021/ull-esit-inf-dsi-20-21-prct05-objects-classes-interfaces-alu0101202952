@@ -1,6 +1,6 @@
 import 'mocha';
 import {expect} from 'chai';
-import {Rational} from '../src/index';
+import {Rational} from '../src/ejercicio-PE102';
 
 
 let rational1 = new Rational(4,8);

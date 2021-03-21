@@ -1,4 +1,4 @@
-/*
+
 import 'mocha';
 import {expect} from 'chai';
 import {Vehicles} from '../src/ejercicio-3';
@@ -74,4 +74,3 @@ describe('Street', () => {
     return expect(coche1.getVelocidad()).to.be.equal(45);
   })
 });
-*/

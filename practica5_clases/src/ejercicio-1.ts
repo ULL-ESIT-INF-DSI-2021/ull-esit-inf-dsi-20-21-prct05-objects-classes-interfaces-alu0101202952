@@ -1,4 +1,16 @@
-/*export class Pokedex{
+/**
+ * ### EJERCICIO 1:
+ * Class Pokedex**
+ * #### ¿En qué consiste?
+ * Queremos guardar los parámetros de un pokemon
+ * @param name del pokemon
+ * @param weight del pokemon
+ * @param height del pokemon
+ * @param type del pokemon
+ * @param stats del pokemon(attack, defense, speed, hp)
+ * @return carcaterísticas de un pokemon
+ */
+export class Pokedex{
   private name: string;
   private weight: number;
   private height: number;
@@ -30,12 +42,20 @@
       for (var i = 0; i < this.stats.length; i++) {
         aux = this.stats[i] + ', ';
         console.log(`: ${aux}`);
-      } 
-      
+      }  
     }
 
 } //class pokedex ends
 
+/**
+ * ### EJERCICIO 1:
+ * Class Combat**
+ * #### ¿En qué consiste?
+ * Queremos simular un combate pokemon para ello dos funciones, combat() y start()
+ * @param type1 de mi pokemon
+ * @param type2 del pokemon rival
+ * @return simulador del combate
+ */
 export class Combat{
 public type1: string;
 public type2: string;
@@ -45,14 +65,24 @@ constructor(type1:string, type2:string) {
   this.type2 = type2;
 
 }
-  
-/*public combat(type1: string, type2: string) {
+ 
+/**
+ * Método público combat()**
+ * #### ¿En qué consiste?
+ * Queremos guardar las efectividades y las debilidades además del daño que causa cada pokemon
+ * @param type1 de mi pokemon
+ * @param type2 del pokemon rival
+ * @return daño que cada pokemon hace
+ */
+public combat(type1: string, type2: string) {
   var type1 = pok1.getType();
   var type2 = pok2.getType();
   var attack1 = 75;
   var attack2 = 100;
 
-  // Modificación método "efectividad() ejercicio 9 de la Práctica 3"
+  /**
+   *  Modificación método "efectividad() ejercicio 9 de la Práctica 3"
+   */ 
   var efectividad1: number = 1;
   var efectividad2: number = 1;
   var dañoPoke1;
@@ -140,12 +170,19 @@ constructor(type1:string, type2:string) {
   dañoPoke2 = Math.round(dañoPoke2);
 
   console.log(`Daño que causa tu equipo Pokemon: ${dañoPoke1}`);
-  console.log(`Daño que realiza el equipo rival: ${dañoPoke2}`);
-    
-    
+  console.log(`Daño que realiza el equipo rival: ${dañoPoke2}`); 
 }
 
-
+/**
+ * Método público start()**
+ * #### ¿En qué consiste?
+ * Simula el combate
+ * @param type1 de mi pokemon
+ * @param type2 del pokemon rival
+ * @param hp1 de mi pokemon
+ * @param hp2 del pokemon rival
+ * @return el combate y como se queda la vida de los pokemon
+ */
 public start(type1: string, type2: string, hp1: number, hp2: number) {
   var result1 = hp1;
   var result2 = hp2;
@@ -185,7 +222,9 @@ console.log(`└───────────────────── 
 let pokemon_ = new Combat(pok1.getType(), pok2.getType()); 
 console.log(pokemon_.combat(pok1.getType(), pok2.getType()));
 
+
+
 console.log(`\n********************************************************************`);
 console.log(`\t\t      START THE BATTLE!!!`);
 console.log(`********************************************************************\n`);
-console.log(pokemon_.start(pok1.getType(), pok2.getType(), 75, 95));*/
+console.log(pokemon_.start(pok1.getType(), pok2.getType(), 75, 95));

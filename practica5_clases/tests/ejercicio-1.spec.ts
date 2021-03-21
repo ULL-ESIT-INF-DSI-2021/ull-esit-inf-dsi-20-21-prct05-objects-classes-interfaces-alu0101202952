@@ -1,4 +1,4 @@
-/*import 'mocha';
+import 'mocha';
 import {expect} from 'chai';
 import {Pokedex} from '../src/ejercicio-1';
 import {Combat} from '../src/ejercicio-1';
@@ -47,4 +47,3 @@ describe('combat', () => {
   })
 });
 
-*/
