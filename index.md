@@ -51,7 +51,7 @@
 Los objetivos en esta práctica será que resolver una serie de ejercicios de programación que nos permitirán conocer más en profundidad los objetos, clases e interfaces del lenguaje TypeScript. Para ello empleando los conocimientos además, que ya tenemos, en typedoc, y la realización de las pruebas unitarias siguiendo los pasos de TDD, es decir, realizar pruebas y expectativas, ver su fallo y corregir el código y volver con la prueba y sus expectativas para que den acierto. Para ello tendremos que usar Mocha y Chai.
 
 - **ENLACE A LA DOCUMENTACIÓN EN TYPEDOC**
-> - [Informe documentación con Typedoc](http://127.0.0.1:5500/p3_Ejercicios_datos_funciones/docs/index.html)
+> - [Informe documentación con Typedoc](http://127.0.0.1:5500/docs/index.html)
 
 
 
@@ -128,7 +128,7 @@ Tras la estructura básica nos dedicaremos a trabajar en el directorio `./src` d
 
 Para conocer más sobre esta herramienta consultar [Typedoc](https://typedoc.org/). Como ya desde la práctica 3 nos habíamos introducido a la herramienta **Typedoc**, solo queda seguir los mismos pasos mecánicos para esta práctica. Dicho informe creado en Typedoc hecho con los comentarios de los ejercicios de esta práctica se aloja en:
 
-[Informe Typedoc Práctica 5]() 
+[Informe Typedoc Práctica 5](http://127.0.0.1:5500/docs/index.html) 
 
 O también mirando en los apartados **Objetivos** y **Bibliografía/ webgrafía** de este informe.
 
@@ -472,6 +472,6 @@ Conclusión sobre la práctica e informe, aquí plantearé la dinámica de la pr
 ## BIBLIOGRAFÍA Y/O WEBGRAFÍA
 
 
-- [Enunciado práctica](https://ull-esit-inf-dsi-2021.github.io/prct03-types-functions/)
+- [Enunciado práctica](https://ull-esit-inf-dsi-2021.github.io/prct05-objects-classes-interfaces/)
 - [Repositorio con ejercicios y estructura básica](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101202952/tree/desarrollo/p3_Ejercicios_datos_funciones)
-- [Informe documentación con Typedoc](http://127.0.0.1:5500/p3_Ejercicios_datos_funciones/docs/index.html)
+- [Informe documentación con Typedoc](http://127.0.0.1:5500/docs/index.html)
