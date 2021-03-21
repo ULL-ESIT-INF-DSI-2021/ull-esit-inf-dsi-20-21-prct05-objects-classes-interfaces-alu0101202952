@@ -467,17 +467,62 @@ Mi primera idea fue crear una estructura de herencia de clases donde la raíz se
 
 Como se ha hecho según TDD, primero desarrollo las pruebas, estas fallan, las git commit -m  y subo y desarrollo al código, vuelvo a ejecutar los test y funcionan. Entonces los subo al repositorio ya correctos.
 
-Por ejemplo con la marca del coche:
+Por ejemplo con la marca del coche privado, luego con el público y así con todos los expects:
 
 Hice la expectativa: 
 
-![expect fallo](https://i.imgur.com/Bjvym0C.jpg)
+![expect fallo](https://i.imgur.com/g3Z1gzh.jpg)
 
 Luego ejecuto `npm run test` y falla.
 
 ![fallo expect](https://i.imgur.com/2xZ2Bxy.jpg)
 
-Guardo con `git commit -m "fallo test devolver marca coche"` y lo subo al repositorio:
+Guardo con `git commit -m "fallo test devolver marca coche privado"` y lo subo al repositorio. Desarrollé el código correctamente y acertó:
+
+![codigo private](https://i.imgur.com/EBwtGVy.jpg)
+
+Lo mismo con el vehículo público, en este caso una guagua:
+
+![expect fallo](https://i.imgur.com/m1xiUUX.jpg) 
+
+Y después de fallar el expect de la marca del vehículo público, hice un `git commit -m "fallo test devolver marca vehículo publico"` y lo subo al repositorio. Desarrollé el código correctamente y acertó:
+
+![codigo publico](https://i.imgur.com/Ej6IXAh.jpg)
+
+Así con todos los getters tanto de vehículos privados como públicos. Quedando:
+
+- Vehículos privados tests: 
+
+![rtest private](https://i.imgur.com/Beus84j.jpg)
+
+- Vehículos privados codigo:
+
+![codigo private](https://i.imgur.com/xmRoiNJ.jpg)
+
+-Vehículos públicos tests:
+
+![tpublic](https://i.imgur.com/dyNYcKP.jpg)
+
+- Vehículos públicos codigo:
+
+![codigo publci](https://i.imgur.com/Wt52pnh.jpg)
+
+Obteniendo así todos los test correctos:
+
+![Tets bien](https://i.imgur.com/0up4q1g.jpg)
+
+Incluso como vemos acertando el test de la interfaz con el número de ruedas.
+
+Luego vino los test de la clase **Street** como por ejemplo el control de velocidad a la que circulan los coches, en es caso hago el test, fallando este, y luego desarrollo el código.
+
+![velocidad tetss](https://i.imgur.com/KcCypla.jpg)
+
+Y luego desarrollé el código y al volver a ejecutar `npm run test` se ejecutó las pruebas correctamente:
+
+![velocidad codig](https://i.imgur.com/EvNA89S.jpg)
+
+
+Finalizando así con el código y completándolo para mostrar los coches y demás. 
 
 
 
@@ -503,7 +548,7 @@ Y así finalizamos esta práctica e informe redactado en el archivo **index.md**
 ## CONCLUSIONES
 
 
-Conclusión sobre la práctica e informe, aquí plantearé la dinámica de la práctica y posibles dudas que me hayan surgido y solucionado. La práctica en sí hubieron ejercicios donde tuve dificultad donde acudí a la tutoría, pero hubieron ejercicios algo complejos de realizar si no usaba expresiones regulares. Estas me han beneficiado bastante a la hora de resolverlos y/o plantearlos. Por otro lado, la herramienta typedoc no me ha causado problemas y he sabido desenvolverme con ella. En cambio, otra uso y herramientas opcionales que quise empezar a usar como son: **Mocha** y **Chai**, me han causado dificultad. Sé que no eran obligatorias pero quise hacer esta práctica con esas herramientas y me ha saltado un error en la instalación que tendré que consultar con el profesor. Por último, el informe pues ya en la práctica 1, me familiaricé con la herramienta de GitHub Pages y ha sido sencillo.
+Conclusión sobre la práctica e informe, aquí plantearé la dinámica de la práctica y posibles dudas que me hayan surgido y solucionado. La práctica en sí hubieron ejercicios donde tuve dificultad donde acudí a la tutoría, pero hubieron ejercicios algo complejos de realizar. Por otro lado, la herramienta typedoc, **Mocha** y **Chai** no me han causado problemas y he sabido desenvolverme con ellas. Por último, el informe pues ya en la práctica 1, me familiaricé con la herramienta de GitHub Pages y ha sido sencillo, aunque algún problema hubo al principio con la creación del informe. De resto todo bien.
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
 
