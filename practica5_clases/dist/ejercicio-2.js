@@ -1,18 +1,5 @@
-/**
- * ### EJERCICIO 2:
- * Class BM**
- * #### ¿En qué consiste?
- * Queremos guardar los datos de un artículo
- * @param title del artículo
- * @param author o autores del articulo
- * @param emailAuthor de los mismos
- * @param keywords palabras claves
- * @param abstract resumen
- * @param publicationDate fecha del publicacion
- * @param editorial del articulo
- * @param countCitations citas que tuvo
- */
-export class BM{
+"use strict";
+/*export class BM{
     private title: String;
     private author = new Array();
     private emailAuthor = new Array();
@@ -76,30 +63,12 @@ export class BM{
       getCitations(){
         return this.countCitations;
       }
-      /**
-      * Método público referenceAPAWDOI()**
-      * #### ¿En qué consiste?
-      * Queremos mostrar la referencia según el formato APA
-      * @return artículo en formato APA
-      */
+      
       public referenceAPAWDOI() {
         console.log(`Dahmani, I., Hifi, M., ${article1.getTitle()}, Ann Oper Res 298, 125–147 (2021). https://doi.org/10.1007/s10479-019-03290-3`);
       }
   
-      /**
-      * Método público articleTable()**
-      * #### ¿En qué consiste?
-      * Queremos mostrar el artículo en forma de tabla
-      * @param title del artículo
-      * @param author o autores del articulo
-      * @param emailAuthor de los mismos
-      * @param keywords palabras claves
-      * @param abstract resumen
-      * @param publicationDate fecha del publicacion
-      * @param editorial del articulo
-      * @param countCitations citas que tuvo 
-      * @return artículo en formato tabla
-      */ 
+      // Mostrar por la consola la información incluida en la base de datos en formato tabla
       public articleTable(title: String, author =new Array(), emailAuthor = new Array(), keywords = new Array(), abstract: String, publicationDate= new Array(3), editorial: String, countCitations: number){
         this.title = title;
         this.author = author;
@@ -140,5 +109,5 @@ export class BM{
   
       console.log(`\n********************************************************************\n`);
       
-   });   
-   
+   });
+   */ 
